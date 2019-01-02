@@ -1,0 +1,75 @@
+<div class="wrapper-pro">
+  <app-sidebar></app-sidebar>
+  <div class="content-inner-all">
+    <app-header></app-header>
+    <app-breadcrumb></app-breadcrumb>
+    <app-header-mobile></app-header-mobile>
+    <app-breadcrumb-mobile></app-breadcrumb-mobile>
+
+    <div class="dual-list-box-area mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="sparkline10-list shadow-reset">
+                        <div class="sparkline10-hd">
+                            <div class="main-sparkline10-hd">
+                                <h1>Images Cropper</h1>
+                                <div class="sparkline10-outline-icon">
+                                    <span class="sparkline10-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                    <span><i class="fa fa-wrench"></i></span>
+                                    <span class="sparkline10-collapse-close"><i class="fa fa-times"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sparkline10-graph">
+                            <div class="basic-login-form-ad">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="dual-list-box-inner">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="image-crop">
+                                                        <img src="assets/img/cropper/1.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="preview-img-pro-ad">
+                                                        <h4>Preview image</h4>
+                                                        <div class="img-preview img-preview-custom"></div>
+                                                        <h4 class="comon-method">Comon method</h4>
+                                                        <p>
+                                                            You can upload new image to crop.
+                                                        </p>
+                                                        <div class="btn-group images-cropper-pro">
+                                                            <label title="Upload image file" for="inputImage" class="btn btn-primary img-cropper-cp">
+                                                                <input type="file" accept="image/*" name="file" id="inputImage" class="hide"> Upload new image
+                                                            </label>
+                                                            <label title="Donload image" id="download" class="btn btn-primary">Download</label>
+                                                        </div>
+                                                        <h4 class="comon-method">Other method</h4>
+                                                        <p>
+                                                            You may set cropper options with <code>$(image}).cropper(options)</code>
+                                                        </p>
+                                                        <div class="btn-group images-action-pro">
+                                                            <button class="btn btn-white" id="zoomIn" type="button">Zoom In</button>
+                                                            <button class="btn btn-white" id="zoomOut" type="button">Zoom Out</button>
+                                                            <button class="btn btn-white" id="rotateLeft" type="button">Rotate Left</button>
+                                                            <button class="btn btn-white" id="rotateRight" type="button">Rotate Right</button>
+                                                            <button class="btn btn-warning img-cropper-cp-t" id="setDrag" type="button">New crop</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
