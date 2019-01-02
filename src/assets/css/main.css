@@ -3815,6 +3815,7 @@ ul.profile-contact-menu {
 }
 .header-top-area {
     height: 40px;
+    padding-bottom: 20px;
 }
 .fixed-header-top{
 	position: fixed;
