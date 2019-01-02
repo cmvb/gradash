@@ -1,3 +1,64 @@
-<p>
-  rounded-charts works!
-</p>
+<div class="wrapper-pro">
+  <app-sidebar></app-sidebar>
+  <div class="content-inner-all">
+    <app-header></app-header>
+    <app-breadcrumb></app-breadcrumb>
+    <app-header-mobile></app-header-mobile>
+    <app-breadcrumb-mobile></app-breadcrumb-mobile>
+
+    <div class="charts-area mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="charts-single-pro shadow-reset nt-mg-b-30">
+                        <div class="alert-title">
+                            <h2>Pie Chart</h2>
+                            <p>A bar chart provides a way of showing data values. It is sometimes used to show trend data. we create a bar chart for a single dataset and render that in our page.</p>
+                        </div>
+                        <div id="pie-chart">
+                            <canvas id="piechart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="charts-single-pro shadow-reset nt-mg-b-30">
+                        <div class="alert-title">
+                            <h2>Polar Chart</h2>
+                            <p>A bar chart provides a way of showing data values. It is sometimes used to show trend data. we create a bar chart for a single dataset and render that in our page.</p>
+                        </div>
+                        <div id="polar-chart">
+                            <canvas id="polarchart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="charts-single-pro shadow-reset responsive-accordion">
+                        <div class="alert-title">
+                            <h2>Radar Chart</h2>
+                            <p>A bar chart provides a way of showing data values. It is sometimes used to show trend data. we create a bar chart for a single dataset and render that in our page.</p>
+                        </div>
+                        <div id="radar-chart">
+                            <canvas id="radarchart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="charts-single-pro round-mg-t-30-gl shadow-reset">
+                        <div class="alert-title">
+                            <h2>Doughnut Chart</h2>
+                            <p>A bar chart provides a way of showing data values. It is sometimes used to show trend data. we create a bar chart for a single dataset and render that in our page.</p>
+                        </div>
+                        <div id="doughnut-chart">
+                            <canvas id="Doughnutchart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
+  <app-footer></app-footer>
+</div>
