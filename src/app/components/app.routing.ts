@@ -29,6 +29,8 @@ import {C3ChartsComponent} from './c3-charts/c3-charts.component';
 import {LoginGuard} from './login.guard';
 import {SparklinesChartsComponent} from './sparklines-charts/sparklines-charts.component';
 import {PeityChartsComponent} from './peity-charts/peity-charts.component';
+import {StaticTableComponent} from './static-table/static-table.component';
+import {DataTableComponent} from './data-table/data-table.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent, canActivate: [LoginGuard]},
@@ -56,6 +58,8 @@ const routes: Routes = [
   {path: 'c3-charts', component: C3ChartsComponent, canActivate: [LoginGuard]},
   {path: 'sparklines-charts', component: SparklinesChartsComponent, canActivate: [LoginGuard]},
   {path: 'peity-charts', component: PeityChartsComponent, canActivate: [LoginGuard]},
+  {path: 'static-table', component: StaticTableComponent, canActivate: [LoginGuard]},
+  {path: 'data-table', component: DataTableComponent, canActivate: [LoginGuard]},
 
 
 
