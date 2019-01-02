@@ -1100,6 +1100,39 @@
           $image.cropper("setDragMode", "crop");
       });
     }
+
+    function initPies(){
+      $("span.pie").peity("pie", {
+           fill: ['#a063a8', '#d7d7d7', '#ffffff']
+       })
+
+       $(".line").peity("line",{
+           fill: '#a063a8',
+           stroke:'#169c81',
+       })
+
+       $(".bar").peity("bar", {
+           fill: ["#a063a8", "#d7d7d7"]
+       })
+
+       $(".bar_dashboard").peity("bar", {
+           fill: ["#a063a8", "#d7d7d7"],
+           width:100
+       })
+
+       var updatingChart = $(".updating-chart").peity("line", { fill: '#a063a8',stroke:'#169c81', width: 64 })
+
+       setInterval(function() {
+           var random = Math.round(Math.random() * 10)
+           var values = updatingChart.text().split(",")
+           values.shift()
+           values.push(random)
+
+           updatingChart
+               .text(values.join(","))
+               .change()
+       }, 1000);
+    }
     /*--------------------------
 		 END FUNCTIONS CMVB
 		---------------------------- */
@@ -1119,6 +1152,7 @@
         initCodesEditor();
         initTreeView();
         initCropperImg();
+        initPies();
         localStorage.setItem("mouseover","0");
         localStorage.setItem("mouseout","0");
     });
@@ -1137,6 +1171,7 @@
           initCodesEditor();
           initTreeView();
           initCropperImg();
+          initPies();
           localStorage.setItem("datamaps","1");
           localStorage.setItem("mouseover","1");
         }
@@ -1155,6 +1190,7 @@
         initXEditable();
         initCodesEditor();
         initCropperImg();
+        initPies();
         localStorage.setItem("datamaps","1");
         localStorage.setItem("mouseout","1");
       }

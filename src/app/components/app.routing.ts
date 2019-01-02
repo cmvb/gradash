@@ -19,6 +19,9 @@ import {PreloaderComponent} from './preloader/preloader.component';
 import {ImagesCropperComponent} from './images-cropper/images-cropper.component';
 import {ProfileComponent} from './profile/profile.component';
 import {ContactClientComponent} from './contact-client/contact-client.component';
+import {ProjectListComponent} from './project-list/project-list.component';
+import {ProjectDetailsComponent} from './project-details/project-details.component';
+import {BarChartsComponent} from './bar-charts/bar-charts.component';
 import {LoginGuard} from './login.guard';
 
 const routes: Routes = [
@@ -38,6 +41,9 @@ const routes: Routes = [
   {path: 'preloader', component: PreloaderComponent, canActivate: [LoginGuard]},
   {path: 'profile', component: ProfileComponent, canActivate: [LoginGuard]},
   {path: 'contact-client', component: ContactClientComponent, canActivate: [LoginGuard]},
+  {path: 'project-list', component: ProjectListComponent, canActivate: [LoginGuard]},
+  {path: 'project-details', component: ProjectDetailsComponent, canActivate: [LoginGuard]},
+  {path: 'bar-charts', component: BarChartsComponent, canActivate: [LoginGuard]},
 
 
 
