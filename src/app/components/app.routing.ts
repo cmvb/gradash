@@ -32,7 +32,7 @@ import {PeityChartsComponent} from './peity-charts/peity-charts.component';
 import {StaticTableComponent} from './static-table/static-table.component';
 import {DataTableComponent} from './data-table/data-table.component';
 
-const routes: Routes = [
+const routes: Routes = [ 
   {path: 'home', component: HomeComponent, canActivate: [LoginGuard]},
   {path: 'dashboard', component: DashboardComponent, canActivate: [LoginGuard]},
   {path: 'analytics', component: AnalyticsComponent, canActivate: [LoginGuard]},
