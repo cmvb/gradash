@@ -18,6 +18,7 @@ export class LoginGuard implements CanActivate {
     localStorage.setItem("mouseover","0");
     localStorage.setItem("mouseout","0");
     localStorage.setItem("datamaps","0");
+    localStorage.setItem("charts","0");
     localStorage.setItem("code1","0");
     localStorage.setItem("code2","0");
     /*var admin = URLactual.indexOf('Mtto');

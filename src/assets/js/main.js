@@ -900,7 +900,7 @@
       var code1 = document.getElementById("code1");
       var code2 = document.getElementById("code2");
 
-      if(code1 !== null && code2 !== null){
+      if(code1 !== null){
         var c1 = localStorage.getItem("code1");
         if(c1 !== '1'){
             var editor_one = CodeMirror.fromTextArea(code1, {
@@ -911,7 +911,9 @@
             });
             localStorage.setItem("code1","1");
         }
+      }
 
+      if(code2 !== null){
         var c2 = localStorage.getItem("code2");
         if(c2 !== '1'){
             var editor_two = CodeMirror.fromTextArea(code2, {
@@ -1133,6 +1135,1310 @@
                .change()
        }, 1000);
     }
+
+    function initCharts(){
+      var chart = localStorage.getItem("charts");
+      var url = window.location.href;
+      if(chart !== '1'){
+        if (url.includes("bar-charts")) {
+          /*--------------------------
+           BAR
+          ---------------------------- */
+          /*----------------------------------------*/
+         	/*  1.  Bar Chart
+         	/*----------------------------------------*/
+         	var ctx = document.getElementById("barchart1");
+         	var barchart1 = new Chart(ctx, {
+         		type: 'bar',
+         		data: {
+         			labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+         			datasets: [{
+         				label: 'Bar Chart',
+         				data: [12, 19, 3, 5, 2, 3],
+         				backgroundColor: [
+         					'rgba(255, 99, 132, 0.2)',
+         					'rgba(54, 162, 235, 0.2)',
+         					'rgba(255, 206, 86, 0.2)',
+         					'rgba(75, 192, 192, 0.2)',
+         					'rgba(153, 102, 255, 0.2)',
+         					'rgba(255, 159, 64, 0.2)'
+         				],
+         				borderColor: [
+         					'rgba(255,99,132,1)',
+         					'rgba(54, 162, 235, 1)',
+         					'rgba(255, 206, 86, 1)',
+         					'rgba(75, 192, 192, 1)',
+         					'rgba(153, 102, 255, 1)',
+         					'rgba(255, 159, 64, 1)'
+         				],
+         				borderWidth: 1
+         			}]
+         		},
+         		options: {
+         			scales: {
+         				xAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}],
+         				yAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}]
+         			}
+         		}
+         	});
+         	/*----------------------------------------*/
+         	/*  2.  Bar Chart vertical
+         	/*----------------------------------------*/
+         	var ctx = document.getElementById("barchart2");
+         	var barchart2 = new Chart(ctx, {
+         		type: 'bar',
+         		data: {
+         			labels: ["January", "February", "March", "April", "May", "June", "July"],
+         			datasets: [{
+                         label: 'Dataset 1',
+         				data: [12, 19, 3, 5, 2, 3, 9],
+         				borderWidth: 1,
+                         backgroundColor: [
+         					'rgba(255, 99, 132, 0.2)',
+         					'rgba(54, 162, 235, 0.2)',
+         					'rgba(255, 206, 86, 0.2)',
+         					'rgba(75, 192, 192, 0.2)',
+         					'rgba(153, 102, 255, 0.2)',
+         					'rgba(255, 159, 64, 0.2)'
+         				],
+         				borderColor: [
+         					'rgba(255,99,132,1)',
+         					'rgba(54, 162, 235, 1)',
+         					'rgba(255, 206, 86, 1)',
+         					'rgba(75, 192, 192, 1)',
+         					'rgba(153, 102, 255, 1)',
+         					'rgba(255, 159, 64, 1)'
+         				],
+                     }, {
+                         label: 'Dataset 2',
+         				data: [-3, -6, -5, -9, -15, -20],
+                         backgroundColor: [
+         					'rgba(255, 99, 132, 0.2)',
+         					'rgba(54, 162, 235, 0.2)',
+         					'rgba(255, 206, 86, 0.2)',
+         					'rgba(75, 192, 192, 0.2)',
+         					'rgba(153, 102, 255, 0.2)',
+         					'rgba(255, 159, 64, 0.2)'
+         				],
+         				borderColor: [
+         					'rgba(255,99,132,1)',
+         					'rgba(54, 162, 235, 1)',
+         					'rgba(255, 206, 86, 1)',
+         					'rgba(75, 192, 192, 1)',
+         					'rgba(153, 102, 255, 1)',
+         					'rgba(255, 159, 64, 1)'
+         				],
+         				borderWidth: 1
+                     }]
+         		},
+         		options: {
+         			responsive: true,
+         			legend: {
+         				position: 'top',
+         			},
+         			title: {
+         				display: true,
+         				text: 'Bar Chart Vertical'
+         			},
+         			scales: {
+         				xAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}],
+         				yAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}]
+         			}
+         		}
+         	});
+         	/*----------------------------------------*/
+         	/*  3.  Bar Chart Horizontal
+         	/*----------------------------------------*/
+         	var ctx = document.getElementById("barchart3");
+         	var barchart3 = new Chart(ctx, {
+         		type: 'horizontalBar',
+         		data: {
+         			labels: ["January", "February", "March", "April", "May", "June", "July"],
+         			datasets: [{
+                         label: 'Dataset 1',
+         				data: [12, 19, 3, 5, 2, 3, 9],
+         				borderWidth: 1,
+                         backgroundColor: [
+         					'rgba(255, 99, 132, 0.2)',
+         					'rgba(54, 162, 235, 0.2)',
+         					'rgba(255, 206, 86, 0.2)',
+         					'rgba(75, 192, 192, 0.2)',
+         					'rgba(153, 102, 255, 0.2)',
+         					'rgba(255, 159, 64, 0.2)'
+         				],
+         				borderColor: [
+         					'rgba(255,99,132,1)',
+         					'rgba(54, 162, 235, 1)',
+         					'rgba(255, 206, 86, 1)',
+         					'rgba(75, 192, 192, 1)',
+         					'rgba(153, 102, 255, 1)',
+         					'rgba(255, 159, 64, 1)'
+         				],
+                     }, {
+                         label: 'Dataset 2',
+         				data: [-3, -6, -5, -9, -15, -20],
+                         backgroundColor: [
+         					'rgba(255, 99, 132, 0.2)',
+         					'rgba(54, 162, 235, 0.2)',
+         					'rgba(255, 206, 86, 0.2)',
+         					'rgba(75, 192, 192, 0.2)',
+         					'rgba(153, 102, 255, 0.2)',
+         					'rgba(255, 159, 64, 0.2)'
+         				],
+         				borderColor: [
+         					'rgba(255,99,132,1)',
+         					'rgba(54, 162, 235, 1)',
+         					'rgba(255, 206, 86, 1)',
+         					'rgba(75, 192, 192, 1)',
+         					'rgba(153, 102, 255, 1)',
+         					'rgba(255, 159, 64, 1)'
+         				],
+         				borderWidth: 1
+                     }]
+         		},
+         		options: {
+         			responsive: true,
+         			legend: {
+         				position: 'top',
+         			},
+         			title: {
+         				display: true,
+         				text: 'Bar Chart horizontal'
+         			},
+         			scales: {
+         				xAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}],
+         				yAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}]
+         			}
+         		}
+         	});
+         	/*----------------------------------------*/
+         	/*  4.  Bar Chart Multi axis
+         	/*----------------------------------------*/
+         	var ctx = document.getElementById("barchart4");
+         	var barchart4 = new Chart(ctx, {
+         		type: 'bar',
+         		data: {
+         			labels: ["January", "February", "March", "April", "May", "June", "July"],
+         			datasets: [{
+                         label: 'Dataset 1',
+         				data: [12, 19, 3, 5, 2, 3, 9],
+         				borderWidth: 1,
+         				yAxisID: "y-axis-1",
+                         backgroundColor: [
+         					'rgba(255, 99, 132, 0.2)',
+         					'rgba(54, 162, 235, 0.2)',
+         					'rgba(255, 206, 86, 0.2)',
+         					'rgba(75, 192, 192, 0.2)',
+         					'rgba(153, 102, 255, 0.2)',
+         					'rgba(255, 159, 64, 0.2)'
+         				],
+         				borderColor: [
+         					'rgba(255,99,132,1)',
+         					'rgba(54, 162, 235, 1)',
+         					'rgba(255, 206, 86, 1)',
+         					'rgba(75, 192, 192, 1)',
+         					'rgba(153, 102, 255, 1)',
+         					'rgba(255, 159, 64, 1)'
+         				],
+                     }, {
+                         label: 'Dataset 2',
+         				data: [-3, -6, -5, -9, -15, -20],
+         				borderWidth: 1,
+         				yAxisID: "y-axis-2",
+                         backgroundColor: [
+         					'rgba(255, 99, 132, 0.2)',
+         					'rgba(54, 162, 235, 0.2)',
+         					'rgba(255, 206, 86, 0.2)',
+         					'rgba(75, 192, 192, 0.2)',
+         					'rgba(153, 102, 255, 0.2)',
+         					'rgba(255, 159, 64, 0.2)'
+         				],
+         				borderColor: [
+         					'rgba(255,99,132,1)',
+         					'rgba(54, 162, 235, 1)',
+         					'rgba(255, 206, 86, 1)',
+         					'rgba(75, 192, 192, 1)',
+         					'rgba(153, 102, 255, 1)',
+         					'rgba(255, 159, 64, 1)'
+         				],
+
+                     }]
+         		},
+         		options: {
+         			responsive: true,
+         			title:{
+         				display:true,
+         				text:"Bar Chart Multi Axis"
+         			},
+         			tooltips: {
+         				mode: 'index',
+         				intersect: true
+         			},
+         			scales: {
+         				yAxes: [{
+         					type: "linear",
+         					display: true,
+         					position: "left",
+         					id: "y-axis-1",
+         				}, {
+         					type: "linear",
+         					display: true,
+         					position: "right",
+         					id: "y-axis-2",
+         					gridLines: {
+         						drawOnChartArea: false
+         					}
+         				}],
+         			}
+         		}
+         	});
+         	/*----------------------------------------*/
+         	/*  5.  Bar Chart Stacked
+         	/*----------------------------------------*/
+         	var ctx = document.getElementById("barchart5");
+         	var barchart5 = new Chart(ctx, {
+         		type: 'bar',
+         		data: {
+         			labels: ["January", "February", "March", "April", "May", "June", "July"],
+         			datasets: [{
+                         label: 'Dataset 1',
+                         backgroundColor: '#303030',
+         				data: [12, 19, 3, -5, -2, 3, 9]
+                     }, {
+                         label: 'Dataset 2',
+                         backgroundColor: '#03a9f4',
+         				data: [-10, 15, -7, 7, -2, 4, 9]
+
+                     }, {
+                         label: 'Dataset 3',
+                        backgroundColor: '#FFC13B',
+         			   data: [15, -18, 3, 6, 5, -3, 7]
+
+                     }]
+         		},
+         		options: {
+         			title:{
+         				display:true,
+         				text:"Bar Chart Stacked"
+         			},
+         			tooltips: {
+         				mode: 'index',
+         				intersect: false
+         			},
+         			responsive: true,
+         			scales: {
+         				xAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}],
+         				yAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}]
+         			}
+         		}
+         	});
+
+          localStorage.setItem("charts","1");
+        }
+        if (url.includes("line-charts")) {
+          /*--------------------------
+           LINE
+          ---------------------------- */
+         	/*----------------------------------------*/
+         	/*  1.  Basic Line Chart
+         	/*----------------------------------------*/
+         	let draw = Chart.controllers.line.prototype.draw;
+          Chart.controllers.line.prototype.draw = function() {
+             draw.apply(this, arguments);
+             let ctx = this.chart.chart.ctx;
+             let _stroke = ctx.stroke;
+             ctx.stroke = function() {
+                 ctx.save();
+                 ctx.shadowColor = '#07C';
+                 ctx.shadowBlur = 20;
+                 ctx.shadowOffsetX = 2;
+                 ctx.shadowOffsetY = 20;
+                 _stroke.apply(this, arguments);
+                 ctx.restore();
+             }
+         };
+          var ctx = document.getElementById("basiclinechart");
+          let myChart = new Chart(ctx, {
+             type: 'line',
+
+             data: {
+                 labels: ["January", "February", "March", "April", "May", "June", "July"],
+                 datasets: [{
+                     data: [65, 59, 75, 64, 70, 30, 40],
+                     borderColor: '#07C',
+                     pointBackgroundColor: "#FFF",
+                     pointBorderColor: "#07C",
+                     pointHoverBackgroundColor: "#07C",
+                     pointHoverBorderColor: "#FFF",
+                     pointRadius: 4,
+                     pointHoverRadius: 4,
+                     fill: false,
+                     tension: 0.15
+                 }]
+             },
+             options: {
+                 responsive: false,
+                 tooltips: {
+                     displayColors: false,
+                     callbacks: {
+                         label: function(e, d) {
+                             return;
+                         },
+                         title: function() {
+                             return;
+                         }
+                     }
+                 },
+                 legend: {
+                     display: false
+                 },
+                 scales: {
+                     yAxes: [{
+                         ticks: {
+                             max: 90
+                         }
+                     }]
+                 }
+             }
+          });
+        	/*----------------------------------------*/
+         	/*  2.  Line Chart Multi axis
+         	/*----------------------------------------*/
+         	var ctx = document.getElementById("linechartmultiaxis");
+         	var linechartmultiaxis = new Chart(ctx, {
+         		type: 'line',
+         		data: {
+         			labels: ["January", "February", "March", "April", "May", "June", "July"],
+         			datasets: [{
+         				label: "My First dataset",
+         				fill: false,
+                         backgroundColor: '#303030',
+         				borderColor: '#303030',
+         				data: [3, -5, -2, 3, 9, 12, 19],
+         				yAxisID: "y-axis-1"
+                     }, {
+                         label: "My Second dataset",
+         				fill: false,
+                         backgroundColor: '#03a9f4',
+         				borderColor: '#03a9f4',
+         				data: [-12, -3, -4, 6, 3, 7, -20],
+         				yAxisID: "y-axis-2"
+
+         		}]
+         		},
+         		options: {
+         			responsive: true,
+         			hoverMode: 'index',
+         			stacked: false,
+         			title:{
+         				display: true,
+         				text:'Line Chart Multi Axis'
+         			},
+         			scales: {
+         				yAxes: [{
+         					type: "linear",
+         					display: true,
+         					position: "left",
+         					id: "y-axis-1",
+         				}, {
+         					type: "linear",
+         					display: true,
+         					position: "right",
+         					id: "y-axis-2",
+         					gridLines: {
+         						drawOnChartArea: false,
+         					},
+         				}],
+         			}
+         		}
+         	});
+         	/*----------------------------------------*/
+         	/*  3.  Line Chart stepped
+         	/*----------------------------------------*/
+         	var ctx = document.getElementById("linechartstepped");
+         	var linechartstepped = new Chart(ctx, {
+         		type: 'line',
+         		data: {
+         			labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6'],
+         			datasets: [{
+         				label: "steppedLine",
+         				fill: false,
+                         backgroundColor: '#303030',
+         				borderColor: '#303030',
+         				data: [3, -5, -2, 3, 9, 12, 19]
+                     }]
+         		},
+         		options: {
+         			responsive: true,
+         			title: {
+         				display: true,
+         				text:'Line Chart stepped',
+         			},
+         			scales: {
+         				xAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}],
+         				yAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}]
+         			}
+         		}
+         	});
+         	/*----------------------------------------*/
+         	/*  4.  Line Chart Interpolation
+         	/*----------------------------------------*/
+         	var ctx = document.getElementById("linechartinterpolation");
+         	var linechartinterpolation = new Chart(ctx, {
+         		type: 'line',
+         		data: {
+         			labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+         			datasets: [{
+         				label: "Cubic interpolation",
+         				fill: false,
+                         backgroundColor: '#303030',
+         				borderColor: '#303030',
+         				data: [0, 15, 17, 200, 0, 12, -200, 5, 200, 8, 200, 12, 200],
+         				cubicInterpolationMode: 'monotone'
+                     }, {
+                         label: "Cubic interpolation",
+         				fill: false,
+                         backgroundColor: '#03a9f4',
+         				borderColor: '#03a9f4',
+         				data: [-100, 200, 12, -200, 12, 200, 8, -200, 9, 200, -200, -12, -200]
+
+         		}, {
+                         label: "Linear interpolation",
+         				fill: false,
+                         backgroundColor: '#ff0000',
+         				borderColor: '#ff0000',
+         				data: [-8, -9, -10, -11, 0, 0, 0, 12, 10, 8, 9, 7, 12],
+         				lineTension: 0
+
+         		}]
+         		},
+         		options: {
+         			responsive: true,
+         			title:{
+         				display:true,
+         				text:'Line Chart interpolation'
+         			},
+         			tooltips: {
+         				mode: 'index'
+         			},
+         			scales: {
+         				xAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}],
+         				yAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}]
+         			}
+         		}
+         	});
+         	/*----------------------------------------*/
+         	/*  5.  Line Chart styles
+         	/*----------------------------------------*/
+         	var ctx = document.getElementById("linechartstyles");
+         	var linechartstyles = new Chart(ctx, {
+         		type: 'line',
+         		data: {
+         			labels: ["January", "February", "March", "April", "May", "June", "July"],
+         			datasets: [{
+         				label: "Unfilled",
+         				fill: false,
+                         backgroundColor: '#303030',
+         				borderColor: '#303030',
+         				data: [0, 15, 17, 200, 0, 12, -200, 5]
+                     }, {
+                         label: "Dashed",
+         				fill: false,
+                         backgroundColor: '#03a9f4',
+         				borderColor: '#03a9f4',
+         				borderDash: [5, 5],
+         				data: [-100, 200, 12, -200, 12, 200, 8]
+
+         		}, {
+                         label: "Filled",
+         				fill: true,
+                         backgroundColor: '#ff0000',
+         				borderColor: '#ff0000',
+         				data: [-200, -9, 200, -11, 0, -200, 0]
+
+         		}]
+         		},
+         		options: {
+         			responsive: true,
+         			title:{
+         				display:true,
+         				text:'Line Chart Style'
+         			},
+         			tooltips: {
+         				mode: 'index',
+         				intersect: false,
+         			},
+         			hover: {
+         				mode: 'nearest',
+         				intersect: true
+         			},
+         			scales: {
+         				xAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}],
+         				yAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}]
+         			}
+         		}
+         	});
+         	/*----------------------------------------*/
+         	/*  6.  Line Chart point circle
+         	/*----------------------------------------*/
+         	var ctx = document.getElementById("linechartpointcircle");
+         	var linechartpointcircle = new Chart(ctx, {
+         		type: 'line',
+         		data: {
+         			labels: ["January", "February", "March", "April", "May", "June", "July"],
+         			datasets: [{
+         				label: "My First dataset",
+         				backgroundColor: '#03a9f4',
+         				borderColor: '#03a9f4',
+         				data: [0, 10, 20, 30, 40, 50, 60],
+         				fill: false,
+         				pointRadius: 4,
+         				pointHoverRadius: 10,
+         				showLine: false
+         			}]
+         		},
+         		options: {
+         			responsive: true,
+         			title:{
+         				display:true,
+         				text:'Line Chart Point Circle'
+         			},
+         			legend: {
+         				display: false
+         			},
+         			elements: {
+         				point: {
+         					pointStyle: 'circle',
+         				}
+         			},
+         			scales: {
+         				xAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}],
+         				yAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}]
+         			}
+         		}
+         	});
+
+          localStorage.setItem("charts","1");
+        }
+        if (url.includes("rounded-charts")) {
+          /*--------------------------
+           PIE ROUNDED
+          ---------------------------- */
+          /*----------------------------------------*/
+         	/*  1.  pie Chart
+         	/*----------------------------------------*/
+         	var ctx = document.getElementById("piechart");
+         	var piechart = new Chart(ctx, {
+         		type: 'pie',
+         		data: {
+         			labels: ["Red", "Orange", "Yellow", "Green", "Blue"],
+         			datasets: [{
+         				label: 'pie Chart',
+                         backgroundColor: [
+         					'rgb(255, 99, 132)',
+         					'rgb(255, 159, 64)',
+         					'rgb(255, 205, 86)',
+         					'#03a9f4',
+         					'#303030'
+         				],
+         				data: [10, 20, 30, 40, 60]
+                     }]
+         		},
+         		options: {
+         			responsive: true
+         		}
+         	});
+         	/*----------------------------------------*/
+         	/*  2.  polar Chart
+         	/*----------------------------------------*/
+         	var ctx = document.getElementById("polarchart");
+         	var polarchart = new Chart(ctx, {
+         		type: 'polarArea',
+         		data: {
+         			labels: ["Red", "Orange", "Yellow", "Green", "Blue"],
+         			datasets: [{
+         				label: 'pie Chart',
+         				data: [10, 20, 30, 40, 60],
+                         backgroundColor: [
+         					'rgb(255, 99, 132)',
+         					'rgb(255, 159, 64)',
+         					'rgb(255, 205, 86)',
+         					'#03a9f4',
+         					'rgb(201, 203, 207)'
+         				],
+
+                     }]
+         		},
+         		options: {
+                     responsive: true,
+                     legend: {
+                          position: 'right',
+                     },
+                     title: {
+                         display: true,
+                         text: 'Polar Chart'
+                     },
+                     scale: {
+                       ticks: {
+                         beginAtZero: true
+                       },
+                       reverse: false
+                     },
+                     animation: {
+                         animateRotate: false,
+                         animateScale: true
+                     }
+                 }
+         	});
+         	/*----------------------------------------*/
+         	/*  3.  radar Chart
+         	/*----------------------------------------*/
+         	var ctx = document.getElementById("radarchart");
+         	var radarchart = new Chart(ctx, {
+         		type: 'radar',
+         		data: {
+         			labels: ["Design", "Development", "Graphic", "Android", "Games"],
+         			datasets: [{
+         				label: "My First dataset",
+         				data: [90, 20, 30, 40, 10],
+                         backgroundColor: 'rgb(255, 99, 132)',
+                         borderColor: 'rgb(255, 99, 132)',
+                         pointBackgroundColor: '#ff0000',
+
+                     },{
+         				label: "My Second dataset",
+         				data: [50, 20, 10, 30, 90],
+                         backgroundColor: 'rgb(255, 159, 64)',
+                         borderColor: 'rgb(255, 159, 64)',
+                         pointBackgroundColor: '#ff0000',
+
+                     }]
+         		},
+         		options: {
+                     legend: {
+                         position: 'top',
+                     },
+                     title: {
+                         display: true,
+                         text: 'Radar Chart'
+                     },
+                     scale: {
+                       ticks: {
+                         beginAtZero: true
+                       }
+                     }
+                 }
+         	});
+         	/*----------------------------------------*/
+         	/*  4.  Doughnut Chart
+         	/*----------------------------------------*/
+         	var ctx = document.getElementById("Doughnutchart");
+         	var Doughnutchart = new Chart(ctx, {
+         		type: 'radar',
+         		data: {
+         			labels: ["Red", "Orange", "Yellow", "Green", "Blue"],
+         			datasets: [{
+         				label: 'Dataset 1',
+         				data: [10, 20, 30, 40, 90],
+                         backgroundColor: 'rgb(255, 99, 132)'
+
+                     }]
+         		},
+         		options: {
+                     responsive: true,
+                     legend: {
+                         position: 'top',
+                     },
+                     title: {
+                         display: true,
+                         text: 'Doughnut Chart'
+                     },
+                     animation: {
+                         animateScale: true,
+                         animateRotate: true
+                     }
+                 }
+         	});
+
+          localStorage.setItem("charts","1");
+        }
+        if (url.includes("area-charts")) {
+          /*--------------------------
+           AREA
+          ---------------------------- */
+          /*----------------------------------------*/
+         	/*  1.  Area Chart
+         	/*----------------------------------------*/
+         	var ctx = document.getElementById("areachartfalse");
+         	var areachartfalse = new Chart(ctx, {
+         		type: 'line',
+         		data: {
+         			labels: ["January", "February", "March", "April", "May", "June", "July"],
+         			datasets: [{
+         				label: "My First dataset",
+         				fill: false,
+                         backgroundColor: '#303030',
+         				borderColor: '#303030',
+         				data: [0, -20, 20, -20, 20, -20, 20]
+                     }]
+         		},
+         		options: {
+         			responsive: true,
+         			maintainAspectRatio: false,
+         			spanGaps: false,
+         			title:{
+         				display:true,
+         				text:'Area Chart Fill False'
+         			},
+         			elements: {
+         				line: {
+         					tension: 0.000001
+         				}
+         			},
+         			plugins: {
+         				filler: {
+         					propagate: false
+         				}
+         			},
+         			scales: {
+         				xAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}],
+         				yAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}]
+         			}
+         		}
+         	});
+         	/*----------------------------------------*/
+         	/*  2.  Area Chart origin
+         	/*----------------------------------------*/
+         	var ctx = document.getElementById("areachartorigin");
+         	var areachartorigin = new Chart(ctx, {
+         		type: 'line',
+         		data: {
+         			labels: ["January", "February", "March", "April", "May", "June", "July"],
+         			datasets: [{
+         				label: "My First dataset",
+         				fill: 'origin',
+                         backgroundColor: '#03a9f4',
+         				borderColor: '#03a9f4',
+         				data: [0, -20, 20, -20, 20, -20, 20]
+                     }]
+         		},
+         		options: {
+         			responsive: true,
+         			maintainAspectRatio: false,
+         			spanGaps: false,
+         			title:{
+         				display:true,
+         				text:'Area Chart Fill origin'
+         			},
+         			elements: {
+         				line: {
+         					tension: 0.000001
+         				}
+         			},
+         			plugins: {
+         				filler: {
+         					propagate: false
+         				}
+         			},
+         			scales: {
+         				xAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}],
+         				yAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}]
+         			}
+         		}
+         	});
+         	/*----------------------------------------*/
+         	/*  3.  Area Chart start
+         	/*----------------------------------------*/
+         	var ctx = document.getElementById("areachartfillstart");
+         	var areachartfillstart = new Chart(ctx, {
+         		type: 'line',
+         		data: {
+         			labels: ["January", "February", "March", "April", "May", "June", "July"],
+         			datasets: [{
+         				label: "My First dataset",
+         				fill: 'start',
+                         backgroundColor: '#03a9f4',
+         				borderColor: '#03a9f4',
+         				data: [0, 10, 20, 30, 40, 50, 100]
+                     }]
+         		},
+         		options: {
+         			responsive: true,
+         			maintainAspectRatio: false,
+         			spanGaps: false,
+         			title:{
+         				display:true,
+         				text:'Area Chart Fill start'
+         			},
+         			elements: {
+         				line: {
+         					tension: 0.000001
+         				}
+         			},
+         			plugins: {
+         				filler: {
+         					propagate: false
+         				}
+         			},
+         			scales: {
+         				xAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}],
+         				yAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}]
+         			}
+         		}
+         	});
+         	/*----------------------------------------*/
+         	/*  4.  Area Chart end
+         	/*----------------------------------------*/
+         	var ctx = document.getElementById("areachartend");
+         	var areachartend = new Chart(ctx, {
+         		type: 'line',
+         		data: {
+         			labels: ["January", "February", "March", "April", "May", "June", "July"],
+         			datasets: [{
+         				label: "My First dataset",
+         				fill: 'end',
+                         backgroundColor: '#303030',
+         				borderColor: '#303030',
+         				data: [100, 90, 70, 60, 50, 40, 0]
+                     }]
+         		},
+         		options: {
+         			responsive: true,
+         			maintainAspectRatio: false,
+         			spanGaps: false,
+         			title:{
+         				display:true,
+         				text:'Area Chart Fill end'
+         			},
+         			elements: {
+         				line: {
+         					tension: 0.000001
+         				}
+         			},
+         			plugins: {
+         				filler: {
+         					propagate: false
+         				}
+         			},
+         			scales: {
+         				xAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}],
+         				yAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}]
+         			}
+         		}
+         	});
+         	/*----------------------------------------*/
+         	/*  5.  Area Chart Datasets
+         	/*----------------------------------------*/
+         	var ctx = document.getElementById("areachartDatasets");
+         	var areachartDatasets = new Chart(ctx, {
+         		type: 'line',
+         		data: {
+         			labels: ["January", "February", "March", "April", "May", "June", "July"],
+         			datasets: [{
+         				label: 'D0',
+                         backgroundColor: '#303030',
+         				borderColor: '#303030',
+         				data: [100, 90, 70, 60, 50, 40, 0]
+                     },{
+         				label: 'D1',
+         				fill: true,
+                         backgroundColor: '#03a9f4',
+         				borderColor: '#03a9f4',
+         				data: [100, 90, 70, 60, 50, 40, 0]
+                     },{
+         				label: 'D2',
+         				fill: true,
+                         backgroundColor: '#ff0000',
+         				borderColor: '#ff0000',
+         				data: [100, 90, 70, 60, 50, 40, 0]
+                     }]
+         		},
+         		options:{
+         			maintainAspectRatio: false,
+         			spanGaps: false,
+         			elements: {
+         				line: {
+         					tension: 0.000001
+         				}
+         			},
+         			scales: {
+         				xAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}],
+         				yAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}]
+         			},
+         			plugins: {
+         				filler: {
+         					propagate: false
+         				},
+         				samples_filler_analyser: {
+         					target: 'chart-analyser'
+         				}
+         			}
+         		}
+         	});
+         	/*----------------------------------------*/
+         	/*  6.  Area Chart Legend
+         	/*----------------------------------------*/
+         	var ctx = document.getElementById("areachartLegend");
+         	var areachartLegend = new Chart(ctx, {
+         		type: 'line',
+         		data: {
+         			labels: ["January", "February", "March", "April", "May", "June", "July"],
+         			datasets: [{
+         				label: "My First dataset",
+                         backgroundColor: 'rgb(255, 99, 132)',
+         				borderColor: 'rgb(255, 159, 64)',
+         				data: [100, 90, 70, 60, 50, 40, 0],
+         				borderWidth: 1,
+         				pointStyle: 'rectRot',
+         				pointRadius: 5,
+         				pointBorderColor: 'rgb(0, 0, 0)'
+                     }]
+         		},
+         		options: {
+         			responsive: true,
+         			legend: {
+         				labels: {
+         					usePointStyle: false
+         				}
+         			},
+         			scales: {
+         				xAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}],
+         				yAxes: [{
+         					ticks: {
+         						autoSkip: false,
+         						maxRotation: 0
+         					},
+         					ticks: {
+         					  fontColor: "#fff", // this here
+         					}
+         				}]
+         			},
+         			title: {
+         				display: true,
+         				text: 'Normal Legend'
+         			}
+         		}
+         	});
+
+          localStorage.setItem("charts","1");
+        }
+        if (url.includes("c3-charts")) {
+          /*--------------------------
+          C3
+          ---------------------------- */
+          c3.generate({
+              bindto: '#lineChart',
+              data:{
+                  columns: [
+                      ['data1', 30, 200, 100, 400, 150, 250],
+                      ['data2', 50, 20, 10, 40, 15, 25]
+                  ],
+                  colors:{
+                      data1: '#a063a8',
+                      data2: '#303030'
+                  }
+              }
+          });
+          c3.generate({
+              bindto: '#slineChart',
+              data:{
+                  columns: [
+                      ['data1', 30, 200, 100, 400, 150, 250],
+                      ['data2', 130, 100, 140, 200, 150, 50]
+                  ],
+                  colors:{
+                      data1: '#a063a8',
+                      data2: '#303030'
+                  },
+                  type: 'spline'
+              }
+          });
+          c3.generate({
+              bindto: '#scatter',
+              data:{
+                  xs:{
+                      data1: 'data1_x',
+                      data2: 'data2_x'
+                  },
+                  columns: [
+                      ["data1_x", 3.2, 3.2, 3.1, 2.3, 2.8, 2.8, 3.3, 2.4, 2.9, 2.7, 2.0, 3.0, 2.2, 2.9, 2.9, 3.1, 3.0, 2.7, 2.2, 2.5, 3.2, 2.8, 2.5, 2.8, 2.9, 3.0, 2.8, 3.0, 2.9, 2.6, 2.4, 2.4, 2.7, 2.7, 3.0, 3.4, 3.1, 2.3, 3.0, 2.5, 2.6, 3.0, 2.6, 2.3, 2.7, 3.0, 2.9, 2.9, 2.5, 2.8],
+                      ["data2_x", 3.3, 2.7, 3.0, 2.9, 3.0, 3.0, 2.5, 2.9, 2.5, 3.6, 3.2, 2.7, 3.0, 2.5, 2.8, 3.2, 3.0, 3.8, 2.6, 2.2, 3.2, 2.8, 2.8, 2.7, 3.3, 3.2, 2.8, 3.0, 2.8, 3.0, 2.8, 3.8, 2.8, 2.8, 2.6, 3.0, 3.4, 3.1, 3.0, 3.1, 3.1, 3.1, 2.7, 3.2, 3.3, 3.0, 2.5, 3.0, 3.4, 3.0],
+                      ["data1", 1.4, 1.5, 1.5, 1.3, 1.5, 1.3, 1.6, 1.0, 1.3, 1.4, 1.0, 1.5, 1.0, 1.4, 1.3, 1.4, 1.5, 1.0, 1.5, 1.1, 1.8, 1.3, 1.5, 1.2, 1.3, 1.4, 1.4, 1.7, 1.5, 1.0, 1.1, 1.0, 1.2, 1.6, 1.5, 1.6, 1.5, 1.3, 1.3, 1.3, 1.2, 1.4, 1.2, 1.0, 1.3, 1.2, 1.3, 1.3, 1.1, 1.3],
+                      ["data2", 2.5, 1.9, 2.1, 1.8, 2.2, 2.1, 1.7, 1.8, 1.8, 2.5, 2.0, 1.9, 2.1, 2.0, 2.4, 2.3, 1.8, 2.2, 2.3, 1.5, 2.3, 2.0, 2.0, 1.8, 2.1, 1.8, 1.8, 1.8, 2.1, 1.6, 1.9, 2.0, 2.2, 1.5, 1.4, 2.3, 2.4, 1.8, 1.8, 2.1, 2.4, 2.3, 1.9, 2.3, 2.5, 2.3, 1.9, 2.0, 2.3, 1.8]
+                  ],
+                  colors:{
+                      data1: '#a063a8',
+                      data2: '#303030'
+                  },
+                  type: 'scatter'
+              }
+          });
+          c3.generate({
+              bindto: '#stocked',
+              data:{
+                  columns: [
+                      ['data1', 30,200,100,400,150,250],
+                      ['data2', 50,20,10,40,15,25]
+                  ],
+                  colors:{
+                      data1: '#a063a8',
+                      data2: '#303030'
+                  },
+                  type: 'bar',
+                  groups: [
+                      ['data1', 'data2']
+                  ]
+              }
+          });
+          c3.generate({
+              bindto: '#gauge',
+              data:{
+                  columns: [
+                      ['data', 91.4]
+                  ],
+
+                  type: 'gauge'
+              },
+              color:{
+                  pattern: ['#a063a8', '#303030']
+
+              }
+          });
+          c3.generate({
+              bindto: '#pie',
+              data:{
+                  columns: [
+                      ['data1', 30],
+                      ['data2', 120]
+                  ],
+                  colors:{
+                      data1: '#a063a8',
+                      data2: '#303030'
+                  },
+                  type : 'pie'
+              }
+          });
+
+          localStorage.setItem("charts","1");
+        }
+      }
+    }
     /*--------------------------
 		 END FUNCTIONS CMVB
 		---------------------------- */
@@ -1153,6 +2459,7 @@
         initTreeView();
         initCropperImg();
         initPies();
+        initCharts();
         localStorage.setItem("mouseover","0");
         localStorage.setItem("mouseout","0");
     });
@@ -1172,6 +2479,7 @@
           initTreeView();
           initCropperImg();
           initPies();
+          initCharts();
           localStorage.setItem("datamaps","1");
           localStorage.setItem("mouseover","1");
         }
@@ -1191,6 +2499,7 @@
         initCodesEditor();
         initCropperImg();
         initPies();
+        initCharts();
         localStorage.setItem("datamaps","1");
         localStorage.setItem("mouseout","1");
       }

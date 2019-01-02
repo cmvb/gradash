@@ -22,7 +22,13 @@ import {ContactClientComponent} from './contact-client/contact-client.component'
 import {ProjectListComponent} from './project-list/project-list.component';
 import {ProjectDetailsComponent} from './project-details/project-details.component';
 import {BarChartsComponent} from './bar-charts/bar-charts.component';
+import {LineChartsComponent} from './line-charts/line-charts.component';
+import {AreaChartsComponent} from './area-charts/area-charts.component';
+import {RoundedChartsComponent} from './rounded-charts/rounded-charts.component';
+import {C3ChartsComponent} from './c3-charts/c3-charts.component';
 import {LoginGuard} from './login.guard';
+import {SparklinesChartsComponent} from './sparklines-charts/sparklines-charts.component';
+import {PeityChartsComponent} from './peity-charts/peity-charts.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent, canActivate: [LoginGuard]},
@@ -44,6 +50,12 @@ const routes: Routes = [
   {path: 'project-list', component: ProjectListComponent, canActivate: [LoginGuard]},
   {path: 'project-details', component: ProjectDetailsComponent, canActivate: [LoginGuard]},
   {path: 'bar-charts', component: BarChartsComponent, canActivate: [LoginGuard]},
+  {path: 'line-charts', component: LineChartsComponent, canActivate: [LoginGuard]},
+  {path: 'area-charts', component: AreaChartsComponent, canActivate: [LoginGuard]},
+  {path: 'rounded-charts', component: RoundedChartsComponent, canActivate: [LoginGuard]},
+  {path: 'c3-charts', component: C3ChartsComponent, canActivate: [LoginGuard]},
+  {path: 'sparklines-charts', component: SparklinesChartsComponent, canActivate: [LoginGuard]},
+  {path: 'peity-charts', component: PeityChartsComponent, canActivate: [LoginGuard]},
 
 
 
