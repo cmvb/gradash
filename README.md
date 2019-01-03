@@ -1,3 +1,9 @@
+#Author Template Converted (HTML5 -> ANGULAR 6)
+
+Carlos Miguel Vera Baene
+Ing. Sistemas
+Colombia 2019
+
 # gradash
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
