@@ -3815,7 +3815,7 @@ ul.profile-contact-menu {
 }
 .header-top-area {
     height: 40px;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 .fixed-header-top{
 	position: fixed;
@@ -4328,7 +4328,7 @@ ul.breadcome-menu {
 }
 .materialdesign .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li .left-menu-dropdown{
 	background: #FFF;
-  box-shadow: 0px 0px 5px white;
+  box-shadow: 3px 2px 5px 0 rgba(0, 0, 0, 0.14), 1px 1px 5px 0 rgba(0, 0, 0, 0.12), 4px 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 .materialdesign .flot-tick-label.tickLabel, .materialdesign .legend > div{
 	color: #fff;
@@ -4428,4 +4428,30 @@ div#sparklinedask2, div#sparklinedask1 {
 
 .editable{
   cursor: pointer;
+}
+
+.dropdown-menu>li>a{
+  cursor: pointer;
+}
+
+.verticalSpan{
+  top: -30px;
+  left: -10px;
+  display: block;
+  position: absolute;
+  text-align: center;
+  font: 10pt Tahoma, Arial, sans-serif;
+  background: #333333;
+  padding: 5px;
+  color: #fff;
+}
+
+.verticalSpan:after{
+  content: '';
+  position: absolute;
+  top: 98%;
+  left: 25%;
+  border-top: 5px solid #333333;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
 }

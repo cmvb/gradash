@@ -2439,6 +2439,374 @@
         }
       }
     }
+
+    function initKnob(){
+      	$(".dial").knob();
+    }
+
+    function initSliders(){
+      /*
+      * IONRANGE
+      */
+      $("#ionrange_1").ionRangeSlider({
+    		min: 0,
+    		max: 5000,
+    		type: 'double',
+    		prefix: "$",
+    		maxPostfix: "+",
+    		prettify: false,
+    		hasGrid: true
+    	});
+    	$("#ionrange_2").ionRangeSlider({
+                min: 0,
+                max: 10,
+                type: 'single',
+                step: 0.1,
+                postfix: " carats",
+                prettify: false,
+                hasGrid: true
+            });
+    	 $("#ionrange_3").ionRangeSlider({
+    		min: -50,
+    		max: 50,
+    		from: 0,
+    		postfix: "&deg;",
+    		prettify: false,
+    		hasGrid: true
+    	});
+
+    	$("#ionrange_4").ionRangeSlider({
+    		values: [
+    			"January", "February", "March",
+    			"April", "May", "June",
+    			"July", "August", "September",
+    			"October", "November", "December"
+    		],
+    		type: 'single',
+    		hasGrid: true
+    	});
+
+      /*
+      * RANGLE
+      */
+      var initialSpark = 60;
+			var sparkTooltip = function(event, ui) {
+				var curSpark = ui.value  || initialSpark
+				var sparktip = '<span class="slider-tip">' + curSpark + '</span>';
+				$(this).find('.ui-slider-handle').html(sparktip);
+			}
+
+			$("#slider9").slider({
+				orientation: "vertical",
+				range: "min",
+				min: 1,
+				max: 100,
+				step: 1,
+				value: initialSpark,
+				create: sparkTooltip,
+				slide: sparkTooltip
+			});
+
+			$("#slider6").slider({
+				orientation: "vertical",
+				range: "min",
+				min: 0,
+				max: 100,
+				value: 60,
+				slide: function(event, ui) {
+					$("#volume").val(ui.value);
+				}
+			});
+
+			$("#volume").val(
+				$("#slider6").slider("value")
+			);
+
+      $("#slider7").slider({
+        orientation: "vertical",
+        range: true,
+        values: [27, 67],
+        slide: function(event, ui) {
+        	$("#sales").val("$" + ui.values[0] + " - $" + ui.values[1]);
+        }
+      });
+      $("#sales").val( "$" + $("#slider7").slider("values", 0) + " - $" + $("#slider7").slider("values", 1));
+
+      var verticalRangle = localStorage.getItem("verticalRangle");
+      var url = window.location.href;
+      if(verticalRangle !== '1'){
+        $("#eq > .sliderv-wrapper").each(function() {
+          var value = parseInt($(this).text(), 10);
+          	$(this).slider({
+          	value: value,
+          	range: "min",
+          	animate: true,
+          	orientation: "vertical"
+          });
+        });
+
+  			$("#eq2 > .sliderv-wrapper").each(function() {
+  				var value = parseInt($(this).text(), 10);
+  					$(this).slider({
+  					value: value,
+  					range: "min",
+  					animate: true,
+  					orientation: "vertical"
+  				});
+  			});
+
+        localStorage.setItem("verticalRangle","1");
+      }
+
+  		var initialYear = 1980;
+  		var yearTooltip = function(event, ui) {
+  			var curYear = ui.value || initialYear
+  			var yeartip = '<span class="slider-tip">' + curYear + '</span>';
+  			$(this).find('.ui-slider-handle').html(yeartip);
+  		}
+
+			$("#slider10").slider({
+				value: initialYear,
+				range: "min",
+				min: 1950,
+				max: 2020,
+				step: 1,
+				create: yearTooltip,
+				slide: yearTooltip
+			});
+
+			$('#slider8').slider({
+				range: true,
+				values: [500, 1500],
+				min: 10,
+				max: 2000,
+				step: 10,
+				slide: function(event, ui) {
+					$("#budget").val("$" + ui.values[0] + " - $" + ui.values[1]);
+				}
+			});
+			$("#budget").val("$" + $("#slider8").slider("values", 0) + " - $" + $("#slider8").slider("values", 1));
+
+			$("#slider").slider({
+				range: "min",
+				min: 10,
+				max: 100,
+				value: 80
+			});
+			$("#slider1").slider({
+				range: true,
+				values: [17, 83]
+			});
+
+			$( "#slider2" ).slider({
+				range: "min",
+				value: 140,
+				min: 1,
+				max: 800,
+				slide: function(event, ui) {
+					$("#amount").val("$" + ui.value);
+				}
+			});
+
+			$("#amount").val(
+				"$" + $("#slider2").slider("value")
+			);
+
+			$("#slider3").slider({
+				range: "max",
+				min: 1,
+				max: 10,
+				value: 2,
+				slide: function(event, ui) {
+					$("#bedrooms").val(ui.value);
+				}
+			});
+
+			$("#bedrooms").val(
+				$("#slider3").slider("value")
+			);
+    }
+
+    function initChosen(){
+      $('.chosen-select').chosen({width: "100%"});
+
+      $(".select2_demo_2").select2();
+      $(".select2_demo_3").select2({
+        placeholder: "Select a state",
+        allowClear: true
+      });
+    }
+
+    function initSelectColor(){
+      // HEX
+   			$("#hex").spectrum({
+   				color: "#f00",
+   				preferredFormat: "hex",
+   				showInput: true
+   			});
+   			// HSL
+   			$("#hsl").spectrum({
+   				color: "#c34040",
+   				preferredFormat: "hsl",
+   				showInput: true
+   			});
+   			// RGB
+   			$("#rgb").spectrum({
+   				color: "#dbc75e",
+   				preferredFormat: "rgb",
+   				showInput: true
+   			});
+   			// Alpha RGB
+   			$("#a-rgb").spectrum({
+   				showAlpha: true,
+   				color: "#3dbb8f",
+   				preferredFormat: "rgb",
+   				showInput: true
+   			});
+   			// Alpha HSL
+   			$("#a-hsl").spectrum({
+   				showAlpha: true,
+   				color: "#8bc177",
+   				preferredFormat: "hsl",
+   				showInput: true
+   			});
+   			// Palette
+   			$("#palette1").spectrum({
+   				color: "#9257b4",
+   				preferredFormat: "hex",
+   				showInput: true,
+   				showPalette: true,
+   				palette: [
+   					['#000', '#fff', '#ffebcd'],
+   					['#ff8000', '#448026', '#ffffe0']
+   				]
+   			});
+   			// Palette only
+   			$("#palette2").spectrum({
+   				showPaletteOnly: true,
+   				showPalette:true,
+   				color: '#780707',
+   				palette: [
+   					['#000', '#fff', '#ffebcd','#ff8000', '#448026'],
+   					['#ff0000', '#fff700', '#75b274', '#1d31c3', '#9257b4']
+   				]
+   			});
+   			// Method "show"
+   			$("#hex, #hsl, #rgb, #a-hsl, #a-rgb, #palette1, #palette2").show();
+    }
+
+    function initTouchSpin(){
+      $(".touchspin1").TouchSpin({
+    		buttondown_class: 'btn btn-white',
+    		buttonup_class: 'btn btn-white'
+    	});
+
+    	$(".touchspin2").TouchSpin({
+    		min: 0,
+    		max: 100,
+    		step: 0.1,
+    		decimals: 2,
+    		boostat: 5,
+    		maxboostedstep: 10,
+    		postfix: '%',
+    		buttondown_class: 'btn btn-white',
+    		buttonup_class: 'btn btn-white'
+    	});
+
+    	$(".touchspin3").TouchSpin({
+    		verticalbuttons: true,
+    		buttondown_class: 'btn btn-white',
+    		buttonup_class: 'btn btn-white'
+    	});
+    }
+
+    function initPasswordMeter(){
+      var passmeter = localStorage.getItem("passmeter");
+      if(passmeter !== '1'){
+        // Example 1
+        var options1 = {};
+        options1.ui = {
+            container: "#pwd-container1",
+            showVerdictsInsideProgressBar: true,
+            viewports: {
+                progress: ".pwstrength_viewport_progress"
+            }
+        };
+        options1.common = {
+            debug: false,
+        };
+        $('.example1').pwstrength(options1);
+
+        // Example 2
+        var options2 = {};
+        options2.ui = {
+            container: "#pwd-container2",
+            showStatus: true,
+            showProgressBar: false,
+            viewports: {
+                verdict: ".pwstrength_viewport_verdict"
+            }
+        };
+        $('.example2').pwstrength(options2);
+
+        // Example 3
+        var options3 = {};
+        options3.ui = {
+            container: "#pwd-container3",
+            showVerdictsInsideProgressBar: true,
+            viewports: {
+                progress: ".pwstrength_viewport_progress2"
+            }
+        };
+        options3.common = {
+            debug: true,
+            usernameField: "#username"
+        };
+        $('.example3').pwstrength(options3);
+
+        // Example 4
+        var options4 = {};
+        options4.ui = {
+            container: "#pwd-container4",
+            viewports: {
+                progress: ".pwstrength_viewport_progress4",
+                verdict: ".pwstrength_viewport_verdict4"
+            }
+        };
+        options4.common = {
+            zxcvbn: true,
+            zxcvbnTerms: ['samurai', 'shogun', 'bushido', 'daisho', 'seppuku'],
+            userInputs: ['#year', '#familyname']
+        };
+        $('.example4').pwstrength(options4);
+
+        localStorage.setItem("passmeter", "1");
+      }
+    }
+
+    function initSummernote(){
+      $('#summernote1').summernote({
+    		height: 200,
+    	});
+    	$('#summernote2').summernote({
+    		height: 200,
+    	});
+    	$('#summernote3').summernote({
+    		height: 200,
+    	});
+    	$('#summernote4').summernote({
+    		height: 200,
+    	});
+    	$('#summernote5').summernote({
+    		height: 400,
+    	});
+    }
+
+    function initDualList(){
+      $('.dual_select').bootstrapDualListbox({
+  			selectorMinimalHeight: 160
+  		});
+    }
     /*--------------------------
 		 END FUNCTIONS CMVB
 		---------------------------- */
@@ -2460,6 +2828,14 @@
         initCropperImg();
         initPies();
         initCharts();
+        initKnob();
+        initSliders();
+        initChosen();
+        initSelectColor();
+        initTouchSpin();
+        initPasswordMeter();
+        initSummernote();
+        initDualList();
         localStorage.setItem("mouseover","0");
         localStorage.setItem("mouseout","0");
     });
@@ -2480,6 +2856,14 @@
           initCropperImg();
           initPies();
           initCharts();
+          initKnob();
+          initSliders();
+          initChosen();
+          initSelectColor();
+          initTouchSpin();
+          initPasswordMeter();
+          initSummernote();
+          initDualList();
           localStorage.setItem("datamaps","1");
           localStorage.setItem("mouseover","1");
         }
@@ -2500,6 +2884,14 @@
         initCropperImg();
         initPies();
         initCharts();
+        initKnob();
+        initSliders();
+        initChosen();
+        initSelectColor();
+        initTouchSpin();
+        initPasswordMeter();
+        initSummernote();
+        initDualList();
         localStorage.setItem("datamaps","1");
         localStorage.setItem("mouseout","1");
       }

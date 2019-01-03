@@ -318,6 +318,19 @@ export class Util {
     element.toggleClass('open');
   }
 
+  abrirDropMenu(event){
+    let element = $(event.target);
+    debugger;
+    let isOpened = element.get(0).getAttribute('aria-expanded');
+    if(isOpened === 'true'){
+      element.get(0).setAttribute('aria-expanded',false);
+    }
+    else{
+      element.get(0).setAttribute('aria-expanded',true);
+    }
+    $(element).parent().toggleClass('open');
+  }
+
   getUrlActual(){
     let url = window.location.href.toString();
     return url.split('4200')[1];

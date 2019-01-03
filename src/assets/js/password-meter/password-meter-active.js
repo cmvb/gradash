@@ -1,7 +1,7 @@
 (function ($) {
  "use strict";
- 
-			// Example 1
+
+			      // Example 1
             var options1 = {};
             options1.ui = {
                 container: "#pwd-container1",
@@ -57,6 +57,6 @@
                 userInputs: ['#year', '#familyname']
             };
             $('.example4').pwstrength(options4);
-			
-	
-})(jQuery); 
+
+
+})(jQuery);
