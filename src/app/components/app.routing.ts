@@ -13,7 +13,7 @@ import {MapsComponent} from './maps/maps.component';
 import {DataMapsComponent} from './data-maps/data-maps.component';
 import {FileViewerComponent} from './file-viewer/file-viewer.component';
 import {XEditableComponent} from './x-editable/x-editable.component';
-import {TextEditorComponent} from './text-editor/text-editor.component';
+import {CodeEditorComponent} from './code-editor/code-editor.component';
 import {TreeViewComponent} from './tree-view/tree-view.component';
 import {PreloaderComponent} from './preloader/preloader.component';
 import {ImagesCropperComponent} from './images-cropper/images-cropper.component';
@@ -26,13 +26,20 @@ import {LineChartsComponent} from './line-charts/line-charts.component';
 import {AreaChartsComponent} from './area-charts/area-charts.component';
 import {RoundedChartsComponent} from './rounded-charts/rounded-charts.component';
 import {C3ChartsComponent} from './c3-charts/c3-charts.component';
-import {LoginGuard} from './login.guard';
 import {SparklinesChartsComponent} from './sparklines-charts/sparklines-charts.component';
 import {PeityChartsComponent} from './peity-charts/peity-charts.component';
 import {StaticTableComponent} from './static-table/static-table.component';
 import {DataTableComponent} from './data-table/data-table.component';
+import {BasicElementsComponent} from './basic-elements/basic-elements.component';
+import {AdvanceElementsComponent} from './advance-elements/advance-elements.component';
+import {PasswordMeterComponent} from './password-meter/password-meter.component';
+import {MultiUploadComponent} from './multi-upload/multi-upload.component';
+import {TextEditorComponent} from './text-editor/text-editor.component';
+import {DualListBoxComponent} from './dual-list-box/dual-list-box.component';
 
-const routes: Routes = [ 
+import {LoginGuard} from './login.guard';
+
+const routes: Routes = [
   {path: 'home', component: HomeComponent, canActivate: [LoginGuard]},
   {path: 'dashboard', component: DashboardComponent, canActivate: [LoginGuard]},
   {path: 'analytics', component: AnalyticsComponent, canActivate: [LoginGuard]},
@@ -44,7 +51,7 @@ const routes: Routes = [
   {path: 'data-maps', component: DataMapsComponent, canActivate: [LoginGuard]},
   {path: 'file-viewer', component: FileViewerComponent, canActivate: [LoginGuard]},
   {path: 'x-editable', component: XEditableComponent, canActivate: [LoginGuard]},
-  {path: 'text-editor', component: TextEditorComponent, canActivate: [LoginGuard]},
+  {path: 'code-editor', component: CodeEditorComponent, canActivate: [LoginGuard]},
   {path: 'tree-view', component: TreeViewComponent, canActivate: [LoginGuard]},
   {path: 'preloader', component: PreloaderComponent, canActivate: [LoginGuard]},
   {path: 'profile', component: ProfileComponent, canActivate: [LoginGuard]},
@@ -60,6 +67,12 @@ const routes: Routes = [
   {path: 'peity-charts', component: PeityChartsComponent, canActivate: [LoginGuard]},
   {path: 'static-table', component: StaticTableComponent, canActivate: [LoginGuard]},
   {path: 'data-table', component: DataTableComponent, canActivate: [LoginGuard]},
+  {path: 'basic-elements', component: BasicElementsComponent, canActivate: [LoginGuard]},
+  {path: 'advance-elements', component: AdvanceElementsComponent, canActivate: [LoginGuard]},
+  {path: 'password-meter', component: PasswordMeterComponent, canActivate: [LoginGuard]},
+  {path: 'multi-upload', component: MultiUploadComponent, canActivate: [LoginGuard]},
+  {path: 'text-editor', component: TextEditorComponent, canActivate: [LoginGuard]},
+  {path: 'dual-list-box', component: DualListBoxComponent, canActivate: [LoginGuard]},
 
 
 

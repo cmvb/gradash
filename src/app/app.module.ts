@@ -63,6 +63,7 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { ReviewComponent } from './components/review/review.component';
 import { OrderComponent } from './components/order/order.component';
 import { CommentComponent } from './components/comment/comment.component';
+import { CodeEditorComponent } from './components/code-editor/code-editor.component';
 
 @NgModule({
   declarations: [
@@ -118,7 +119,8 @@ import { CommentComponent } from './components/comment/comment.component';
     ContactsComponent,
     ReviewComponent,
     OrderComponent,
-    CommentComponent
+    CommentComponent,
+    CodeEditorComponent
   ],
   imports: [
     BrowserModule,
