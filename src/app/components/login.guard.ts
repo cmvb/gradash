@@ -21,6 +21,7 @@ export class LoginGuard implements CanActivate {
     localStorage.setItem("charts","0");
     localStorage.setItem("verticalRangle","0");
     localStorage.setItem("passmeter", "0");
+    localStorage.setItem("noty", "0");
     localStorage.setItem("code1","0");
     localStorage.setItem("code2","0");
     /*var admin = URLactual.indexOf('Mtto');

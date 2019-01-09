@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Util} from '../.././components/Util';
+
+declare var $: any;
 
 @Component({
   selector: 'app-modals',
@@ -6,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modals.component.css']
 })
 export class ModalsComponent implements OnInit {
+  util:any;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(util: Util) {
+    this.util = util;
   }
 
+  ngOnInit() {}
 }

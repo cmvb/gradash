@@ -4455,3 +4455,30 @@ div#sparklinedask2, div#sparklinedask1 {
   border-right: 6px solid transparent;
   border-left: 6px solid transparent;
 }
+
+a.Primary, a.Information, a.Warning, a.Danger, a.Alert, .modal-footer a{
+  cursor: pointer;
+}
+
+.icons{
+  padding: 5px;
+  margin: 5px;
+}
+.icons section{
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #c3c3c3;
+}
+
+.fa{
+  padding: 5px;
+}
+
+.alert-title{
+  font-weight: bolder;
+}
+
+
+.admin-pro-accordion-wrap .adminpro-custon-design .admin-panel-content p{
+  color: #303030 !important;
+}

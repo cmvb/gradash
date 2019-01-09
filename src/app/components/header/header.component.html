@@ -14,9 +14,9 @@
                 <div class="col-lg-6 col-md-1 col-sm-1 col-xs-12">
                     <div class="header-top-menu tabl-d-n">
                         <ul class="nav navbar-nav mai-top-nav">
-                            <li class="nav-item"><a routerLink="/home" class="nav-link"><i class="fa fa-home"></i>Inicio</a>
+                            <li class="nav-item"><a routerLink="/home" class="nav-link"><i class="fa fa-home"></i>{{usuario.usuario}}</a>
                             </li>
-                            <li class="nav-item"><a  class="nav-link">About</a>
+                            <li class="nav-item"><a (click)="getExampleRest()" class="nav-link">About</a>
                             </li>
                             <li class="nav-item"><a  class="nav-link">Services</a>
                             </li>
