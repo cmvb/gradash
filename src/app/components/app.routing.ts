@@ -36,11 +36,27 @@ import {PasswordMeterComponent} from './password-meter/password-meter.component'
 import {MultiUploadComponent} from './multi-upload/multi-upload.component';
 import {TextEditorComponent} from './text-editor/text-editor.component';
 import {DualListBoxComponent} from './dual-list-box/dual-list-box.component';
+import {NotificationsComponent} from './notifications/notifications.component';
+import {AlertsComponent} from './alerts/alerts.component';
+import {ModalsComponent} from './modals/modals.component';
+import {ButtonsComponent} from './buttons/buttons.component';
+import {IconsComponent} from './icons/icons.component';
+import {AccordionsComponent} from './accordions/accordions.component';
+import {TabsComponent} from './tabs/tabs.component';
+import {TabMenusComponent} from './tab-menus/tab-menus.component';
+import {RegisterComponent} from './register/register.component';
+import {CaptchaComponent} from './captcha/captcha.component';
+import {CheckoutComponent} from './checkout/checkout.component';
+import {ContactsComponent} from './contacts/contacts.component';
+import {ReviewComponent} from './review/review.component';
+import {OrderComponent} from './order/order.component';
+import {CommentComponent} from './comment/comment.component';
 
 import {LoginGuard} from './login.guard';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent, canActivate: [LoginGuard]},
+
   {path: 'dashboard', component: DashboardComponent, canActivate: [LoginGuard]},
   {path: 'analytics', component: AnalyticsComponent, canActivate: [LoginGuard]},
   {path: 'widgets', component: WidgetsComponent, canActivate: [LoginGuard]},
@@ -73,7 +89,21 @@ const routes: Routes = [
   {path: 'multi-upload', component: MultiUploadComponent, canActivate: [LoginGuard]},
   {path: 'text-editor', component: TextEditorComponent, canActivate: [LoginGuard]},
   {path: 'dual-list-box', component: DualListBoxComponent, canActivate: [LoginGuard]},
-
+  {path: 'notifications', component: NotificationsComponent, canActivate: [LoginGuard]},
+  {path: 'alerts', component: AlertsComponent, canActivate: [LoginGuard]},
+  {path: 'modals', component: ModalsComponent, canActivate: [LoginGuard]},
+  {path: 'buttons', component: ButtonsComponent, canActivate: [LoginGuard]},
+  {path: 'icons', component: IconsComponent, canActivate: [LoginGuard]},
+  {path: 'tabs', component: TabsComponent, canActivate: [LoginGuard]},
+  {path: 'accordions', component: AccordionsComponent, canActivate: [LoginGuard]},
+  {path: 'tab-menus', component: TabMenusComponent, canActivate: [LoginGuard]},
+  {path: 'register', component: RegisterComponent, canActivate: [LoginGuard]},
+  {path: 'captcha', component: CaptchaComponent, canActivate: [LoginGuard]},
+  {path: 'checkout', component: CheckoutComponent, canActivate: [LoginGuard]},
+  {path: 'contacts', component: ContactsComponent, canActivate: [LoginGuard]},
+  {path: 'review', component: ReviewComponent, canActivate: [LoginGuard]},
+  {path: 'order', component: OrderComponent, canActivate: [LoginGuard]},
+  {path: 'comment', component: CommentComponent, canActivate: [LoginGuard]},
 
 
   {path: '', redirectTo: 'home', pathMatch: 'full'},

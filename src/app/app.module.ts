@@ -64,6 +64,8 @@ import { ReviewComponent } from './components/review/review.component';
 import { OrderComponent } from './components/order/order.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { CodeEditorComponent } from './components/code-editor/code-editor.component';
+import { IconsComponent } from './components/icons/icons.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -120,7 +122,9 @@ import { CodeEditorComponent } from './components/code-editor/code-editor.compon
     ReviewComponent,
     OrderComponent,
     CommentComponent,
-    CodeEditorComponent
+    CodeEditorComponent,
+    IconsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

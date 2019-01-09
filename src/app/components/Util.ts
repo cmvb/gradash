@@ -320,7 +320,6 @@ export class Util {
 
   abrirDropMenu(event){
     let element = $(event.target);
-    debugger;
     let isOpened = element.get(0).getAttribute('aria-expanded');
     if(isOpened === 'true'){
       element.get(0).setAttribute('aria-expanded',false);
@@ -331,56 +330,38 @@ export class Util {
     $(element).parent().toggleClass('open');
   }
 
+  abrirDropButton(event){
+    debugger;
+    let element = $(event.target);
+
+    while(element.get(0).tagName.toString().toUpperCase() !== 'BUTTON'){
+      element = $(element).parent();
+    }
+    let isOpened = element.get(0).getAttribute('aria-expanded');
+    if(isOpened === 'true'){
+      element.get(0).setAttribute('aria-expanded',false);
+    }
+    else{
+      element.get(0).setAttribute('aria-expanded',true);
+    }
+    element.parent().toggleClass('open');
+  }
+
   getUrlActual(){
     let url = window.location.href.toString();
     return url.split('4200')[1];
   }
 
-  loadCustomScroll(){
-    $(".message-menu, .notification-menu, .comment-scrollbar, .notes-menu-scrollbar, .project-st-menu-scrollbar").mCustomScrollbar({
-      autoHideScrollbar: true,
-      scrollbarPosition: "outside",
-      theme:"light-1"
-
-    });
-    $(".timeline-scrollbar").mCustomScrollbar({
-      setHeight:636,
-      autoHideScrollbar: true,
-      scrollbarPosition: "outside",
-      theme:"light-1"
-
-    });
-    $(".project-list-scrollbar").mCustomScrollbar({
-      setHeight:636,
-      theme:"light-2"
-    });
-    $(".messages-scrollbar").mCustomScrollbar({
-      setHeight:503,
-      autoHideScrollbar: true,
-      scrollbarPosition: "outside",
-      theme:"light-1"
-    });
-    $(".chat-scrollbar").mCustomScrollbar({
-      setHeight:250,
-      theme:"light-2"
-    });
-    $(".widgets-chat-scrollbar").mCustomScrollbar({
-      setHeight:335,
-      autoHideScrollbar: true,
-      scrollbarPosition: "outside",
-      theme:"light-1"
-    });
-    $(".widgets-todo-scrollbar").mCustomScrollbar({
-      setHeight:322,
-      autoHideScrollbar: true,
-      scrollbarPosition: "outside",
-      theme:"light-1"
-    });
-    $(".user-profile-scrollbar").mCustomScrollbar({
-      setHeight:1820,
-      autoHideScrollbar: true,
-      scrollbarPosition: "outside",
-      theme:"light-1"
-    });
+  showPopUpById(id){
+    $('#'+id).fadeIn();
+    $('#'+id).toggleClass('in');
+    $('body').append($('<div>', {class: 'modal-backdrop fade in'}));
   }
+
+  hidePopUpById(id){
+    $('#'+id).fadeOut();
+    $('#'+id).toggleClass('in');
+    $('.modal-backdrop').remove();
+  }
+
 }
