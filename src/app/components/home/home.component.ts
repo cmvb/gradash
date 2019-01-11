@@ -6,7 +6,6 @@ import {Router, ActivatedRoute,NavigationEnd} from '@angular/router';
 import {DataObjects} from '../.././components/ObjectGeneric'
 import {Util} from '../.././components/Util';
 import {Observable} from 'rxjs';
-import {NgxPaginationModule} from 'ngx-pagination';
 import {RestService} from '../.././services/rest.service';
 
 declare var $: any;

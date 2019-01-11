@@ -18,7 +18,6 @@ export class HeaderComponent implements OnInit {
   constructor(public restService: RestService, util: Util) {
     this.util = util;
     this.usuario = JSON.parse(localStorage.getItem('usuarioSesion').toString());
-    debugger;
   }
 
   ngOnInit() {

@@ -1,0 +1,85 @@
+<div class="iterador-consulta">
+	<table class="table table-hover rwd-table">
+		<thead>
+			<tr>
+				<th style="width: 98px;"></th>
+				<th *ngFor="let o of cabeceras" scope="col">{{o.nombreCabecera}}</th>
+			</tr>
+		</thead>
+		<tbody *ngIf="lista.length > 0; else sinResultados">
+			<tr
+				*ngFor="let o of lista | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+				<td class="btnActions">
+					<button *ngIf="btnTarifaAContrato" (click)="tarifarioAContrato(o)" type="button"
+						class="btn btn-success btn-just-icon swExtra" placement="right"
+						ngbTooltip="Tarifas A Contrato">
+						<i class="fa fa-file-o"></i>
+					</button>
+					<button *ngIf="btnEditar" (click)="editar(o)" type="button"
+						class="btn btn-warning btn-just-icon swEditar" placement="right"
+						ngbTooltip="Editar">
+						<i class="fa fa-pencil-square-o"></i>
+					</button>
+					<button *ngIf="btnEliminar" (click)="eliminar(o)" type="button"
+						class="btn btn-danger btn-just-icon swEliminar" placement="right"
+						ngbTooltip="Eliminar">
+						<i class="fa fa-trash-o"></i>
+					</button>
+					<button *ngIf="btnGuardarCopago" (click)="guardarCopago(o)" type="button"
+						class="btn btn-info btn-just-icon swEliminar" placement="right"
+						ngbTooltip="Guardar Pago">
+						<i class="fa fa-money"></i>
+					</button>
+					<button *ngIf="btnImprimirCopago" (click)="imprimirCopago(o)" type="button"
+						class="btn btn-info btn-just-icon swEliminar" placement="right"
+						ngbTooltip="Imprimir Pago">
+						<i class="fa fa-file-o"></i>
+					</button>
+				</td>
+				<td class="cdaRow" *ngFor="let c of cabeceras"
+					[attr.data-th]="c.nombreCabecera">
+					<p *ngIf="c.tipoCampo === undefined">{{o[c.campoLista]}}</p>
+					<p *ngIf="c.tipoCampo !== undefined" class="text-center">{{util.getEmunName(c.tipoCampo.enumeradoValores,
+						o[c.campoLista])}}</p>
+				</td>
+			</tr>
+	
+		</tbody>
+	
+		<ng-template #sinResultados>
+		<tbody>
+			<tr>
+				<td attr.colspan="{{cabeceras.length+1}}">
+					<div class="row align-items-center">
+						<div class="col">
+							<p class="bold">{{msg.lbl_info_sin_resultados}}</p>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+		</ng-template>
+	
+	</table>
+	
+	<div *ngIf="lista.length > 0;"
+		class="row justify-content-center contenedor-paginador">
+		<div style="padding-top: 7px; max-height: 45px;"
+			class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6">
+			<pagination-controls (pageChange)="p = $event" autoHide="true"
+				previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+		</div>
+	
+		<!-- CONTROLES DEL PAGINADOR -->
+		<!-- id[ string] Si necesita admitir mas de una instancia de paginacion a la vez, configure idy asegúrese de que coincida con el ID establecido en la configuracion de PaginatePipe. -->
+		<!-- pageChange[ event handler] La expresion especificada se invocara siempre que la pagina cambie haciendo clic en uno de los controles de paginacion. El $eventargumento sera el número de la nueva pagina. Esto se debe usar para actualizar el valor de la currentPagevariable que se paso a PaginatePipe. -->
+		<!-- maxSize[ number] Define la cantidad maxima de enlaces de pagina para mostrar. Por defecto es 7. -->
+		<!-- directionLinks[ boolean] Si se establece en false, los enlaces "anterior" y "siguiente" no se mostraran. Por defecto es true. -->
+		<!-- autoHide[ boolean] Si se establece en true, los controles de paginacion no se mostraran cuando todos los elementos de la coleccion quepan en la primera pagina. Por defecto es false. -->
+		<!-- previousLabel[ string] La etiqueta que se muestra en el enlace "anterior". -->
+		<!-- nextLabel[ string] La etiqueta que se muestra en el enlace "siguiente". -->
+		<!-- screenReaderPaginationLabel[ string] La palabra para "Paginacion" se usa para etiquetar los controles para lectores de pantalla. -->
+		<!-- screenReaderPageLabel[ string] La palabra para "pagina" utilizada en ciertas cadenas generadas para lectores de pantalla, por ejemplo, "Pagina siguiente". -->
+		<!-- screenReaderCurrentLabel[ string] La frase que indica la pagina actual para lectores de pantalla, por ejemplo, "Estas en la pagina". -->
+	</div>
+</div>

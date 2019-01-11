@@ -1059,7 +1059,7 @@ ul.setting-panel-list li{
 
 .footer-copyright-area{
 	background:#303030;
-	padding:10px 0px;
+	padding:3px 0px;
 	text-align:center;
 }
 .footer-copy-right p{
@@ -1870,18 +1870,18 @@ ul.comment-action-st li a{
 
 .chat-list-wrap .chat-button .chat-icon-link{
 	  position: fixed;
-    bottom: 40px;
+    bottom: 5px;
     right: 25px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
 	  background: linear-gradient(to right, rgb(117, 159, 212) 0%, rgb(118, 199, 160) 100%);
   	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7f4d', endColorstr='#ff500a', GradientType=1 );
     z-index: 999;
-    line-height: 40px;
+    line-height: 30px;
     text-align: center;
     border-radius: 50%;
   	cursor:pointer;
-  	color:#fff;
+  	color:#323052;
   	font-size:16px;
     box-shadow: 2px 2px 10px black;
 }
@@ -4288,8 +4288,8 @@ ul.breadcome-menu {
   background-size: cover;
 }
 .materialdesign .footer-copyright-area{
-  background: #FFF;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  background: #ffffff96;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.68);
   bottom: 0;
   position: fixed;
   width: 100%;
@@ -4518,4 +4518,15 @@ a.Primary, a.Information, a.Warning, a.Danger, a.Alert, .modal-footer a{
 }
 .icon-container:hover .icon-name {
 	margin-left: 45px;
+}
+
+.template-footer{
+  font-size: 12px !important;
+  text-shadow: 1px 1px 1px black;
+}
+
+.copyright-footer{
+  font-size: 10px !important;
+  color: #759fd4 !important;
+  text-shadow: 1px 1px 1px #76c7a0;
 }

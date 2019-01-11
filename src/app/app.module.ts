@@ -70,6 +70,7 @@ import { LineaIconsComponent } from './components/linea-icons/linea-icons.compon
 import { MetrizaIconsComponent } from './components/metriza-icons/metriza-icons.component';
 import { OpenIconicIconsComponent } from './components/open-iconic-icons/open-iconic-icons.component';
 import { ThemifyIconsComponent } from './components/themify-icons/themify-icons.component';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   declarations: [
@@ -132,7 +133,8 @@ import { ThemifyIconsComponent } from './components/themify-icons/themify-icons.
     LineaIconsComponent,
     MetrizaIconsComponent,
     OpenIconicIconsComponent,
-    ThemifyIconsComponent
+    ThemifyIconsComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
