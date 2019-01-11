@@ -18,19 +18,19 @@
 							<div class="row">
 								<div class="col-lg-12">
 									<div class="login-title">
-										<h1>Login Form</h1>
+										<h1>Iniciar Sesión</h1>
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-lg-4">
 									<div class="login-input-head">
-										<p>E-mail</p>
+										<p>Usuario</p>
 									</div>
 								</div>
 								<div class="col-lg-8">
 									<div class="login-input-area">
-										<input type="email" name="email" />
+										<input type="text" name="usuario" [(ngModel)]="usuario.usuario"/>
 										<i class="fa fa-envelope login-user" aria-hidden="true"></i>
 									</div>
 								</div>
@@ -38,18 +38,18 @@
 							<div class="row">
 								<div class="col-lg-4">
 									<div class="login-input-head">
-										<p>Password</p>
+										<p>Clave</p>
 									</div>
 								</div>
 								<div class="col-lg-8">
 									<div class="login-input-area">
-										<input type="password" name="password" />
+										<input type="password" name="password" [(ngModel)]="usuario.clave"/>
 										<i class="fa fa-lock login-user"></i>
 									</div>
 									<div class="row">
 										<div class="col-lg-12">
 											<div class="forgot-password">
-												<a >Forgot password?</a>
+												<a routerLink="/register">{{usuario|json}} - {{logueado}} - ¿Olvidaste tu Clave?</a>
 											</div>
 										</div>
 									</div>
@@ -57,7 +57,7 @@
 										<div class="col-lg-12">
 											<div class="login-keep-me">
 												<label class="checkbox">
-													<input type="checkbox" name="remember" checked><i></i>Keep me logged in
+													<input type="checkbox" name="remember" checked [(ngModel)]="logueado" (click)="mantenerLogueadoToggle()"><i></i>Mantenerme Logueado
 												</label>
 											</div>
 										</div>
@@ -70,8 +70,8 @@
 								</div>
 								<div class="col-lg-8">
 									<div class="login-button-pro">
-										<button type="submit" class="login-button login-button-rg">Register</button>
-										<button routerLink="/dashboard" class="login-button login-button-lg">Log in</button>
+										<button routerLink="/register" class="login-button login-button-rg">Registrarse</button>
+										<button (click)="login()" class="login-button login-button-lg">Ingresar</button>
 									</div>
 								</div>
 							</div>

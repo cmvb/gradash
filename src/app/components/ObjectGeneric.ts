@@ -6,14 +6,13 @@ export class DataObjects {
 
   getConst() {
     return {
+      urlRestService: 'http://localhost:7001/Grad/rest/RestServices/',
       //Model rango de fechas para NGBDatePicker
       minDate: {year: 1000, month: 1, day: 1},
       maxDate: {year: 3000, month: 1, day: 1},
+	  
       idiomaEs: 1,
       idiomaEn: 2,
-
-      // apiUrlExportImportUrl: 'http://localhost:8080/RestR/apiRest/restServices/importOrExportInsumo',
-
       phaseAdd: 'add',
       phaseDelete: 'delete',
       phaseSearch: 'search',
@@ -25,7 +24,6 @@ export class DataObjects {
       readOnly: 'readOnly',
       idModal: {'info': 1, 'success': 2, 'warning': 3, 'danger': 4},
       actionModal: {'show': 1, 'hidde': 2},
-      accionesEdit: '',
       collectionSize: 0,
       maxSize: 1,
       rotate: true,
@@ -33,10 +31,46 @@ export class DataObjects {
     }
   };
 
-  getData() {
+  getDataUsuario() {
     return {
-      usuario:'',
-      password:''
+        //Usuario
+        idUsuario: '',
+        usuario: '',
+        clave: '',
+        tipoDocumento: '',
+        numeroDocumento: '',
+        primerNombre: '',
+        segundoNombre: '',
+        primerApellido: '',
+        segundoApellido: '',
+        sexo: '',
+        administrador: '',
+        tokenSesion: '',
+        tbSesion: this.getDataSesion(),
+        mensajeErrorSesion: '',
+
+        //Abstract
+        estado: '',
+        usuarioCreacion: '',
+        fechaCreacion: '',
+        usuarioActualiza: '',
+        fechaActualiza: ''
+    }
+  };
+
+  getDataSesion() {
+    return {
+        idSesion: '',
+        tokenSesion: '',
+        usuario: '',
+        activo: '',
+
+        //Abstract
+        estado: '',
+        usuarioCreacion: '',
+        fechaCreacion: '',
+        usuarioActualiza: '',
+        fechaActualiza: ''
     }
   };
 

@@ -12,39 +12,13 @@ export class Util {
   msg: any;
   const: any;
   enums: any;
-  nuevoObj: any;
   headers = new Headers({'Content-Type': 'application/json'});
   options = new RequestOptions({headers: this.headers});
 
   constructor(private http: Http, dataObject: DataObjects) {
-    this.nuevoObj = dataObject.getData();
     this.const = dataObject.getConst();
     this.msg = dataObject.getProperties(this.const.idiomaEs);
     this.enums = dataObject.getEnumerados();
-  };
-  getNuevoObjeto() {
-    let JsonCuerpo = '';
-    for (let o in this.nuevoObj) {
-      JsonCuerpo += '"' + o + '":"",';
-    }
-    JsonCuerpo = JsonCuerpo.substring(0, JsonCuerpo.length - 1);
-    return JSON.parse('{' + JsonCuerpo + '}');
-  };
-  getNuevoObj() {
-    return {
-      modulo: '1',
-      perfil: '',
-      permisos: '',
-      statusAction: '',
-      statusId: '',
-      statusMsg: '',
-      swActualizar: '0',
-      swAdministrador: '0',
-      swBuscar: '0',
-      swCrear: '0',
-      swEliminar: '0',
-      swExtra: '0'
-    }
   };
   actualizarLista(listaRemover, listaActualizar) {
     if (listaRemover.length <= 0) {

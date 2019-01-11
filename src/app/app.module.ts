@@ -66,6 +66,10 @@ import { CommentComponent } from './components/comment/comment.component';
 import { CodeEditorComponent } from './components/code-editor/code-editor.component';
 import { IconsComponent } from './components/icons/icons.component';
 import { RegisterComponent } from './components/register/register.component';
+import { LineaIconsComponent } from './components/linea-icons/linea-icons.component';
+import { MetrizaIconsComponent } from './components/metriza-icons/metriza-icons.component';
+import { OpenIconicIconsComponent } from './components/open-iconic-icons/open-iconic-icons.component';
+import { ThemifyIconsComponent } from './components/themify-icons/themify-icons.component';
 
 @NgModule({
   declarations: [
@@ -124,7 +128,11 @@ import { RegisterComponent } from './components/register/register.component';
     CommentComponent,
     CodeEditorComponent,
     IconsComponent,
-    RegisterComponent
+    RegisterComponent,
+    LineaIconsComponent,
+    MetrizaIconsComponent,
+    OpenIconicIconsComponent,
+    ThemifyIconsComponent
   ],
   imports: [
     BrowserModule,
