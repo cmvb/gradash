@@ -19,7 +19,6 @@ declare var $: any;
 })
 
 export class HomeComponent implements OnInit {
-  data: any;
   usuario: any;
   logueado:boolean;
   util:any;
@@ -34,6 +33,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.clear();
   }
 
   ngDoCheck(){
@@ -47,16 +47,16 @@ export class HomeComponent implements OnInit {
       this.restService.postREST(url, obj)
         .subscribe(resp => {
           console.log(resp, "res");
-          this.data = resp
-		  debugger;
-		  console.log(this.data);
-		  this.usuario = this.data;
+          this.usuario = resp;
+          localStorage.setItem('usuarioSesion', JSON.stringify(this.usuario));
+          debugger;
+          this.router.navigate(['/dashboard']);
         },
         error => {
           console.log(error, "error");
         })
 
-        console.log(this.data);
+        console.log('Usuario:' + this.usuario);
     } catch (e) {
       console.log(e);
     }
