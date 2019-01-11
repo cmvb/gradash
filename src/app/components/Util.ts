@@ -19,7 +19,8 @@ export class Util {
     this.const = dataObject.getConst();
     this.msg = dataObject.getProperties(this.const.idiomaEs);
     this.enums = dataObject.getEnumerados();
-  };
+  }
+
   actualizarLista(listaRemover, listaActualizar) {
     if (listaRemover.length <= 0) {
       return listaActualizar;
@@ -135,7 +136,6 @@ export class Util {
     })
     return name;
   };
-
   validaciones(objeto, path){
     let flag = true;
     let texto = '';
@@ -244,8 +244,7 @@ export class Util {
     }
 
     return flag;
-  }
-
+  };
   //mostrar o ocultar un modal
   ocultarMostrarModal(idModal, cuerpoModal) {
     if (cuerpoModal != null) {
@@ -270,7 +269,6 @@ export class Util {
       return reemplaza.replace('XXX', cuerpoModal);
     });
   };
-
   clonarObj(obj) {
     if (obj === null || typeof obj !== 'object') {
       return obj;
@@ -282,16 +280,14 @@ export class Util {
     }
 
     return temp;
-  }
-
+  };
   abrirNav(event){
     let element = $(event.target);
     while(element.get(0).tagName.toString().toUpperCase() !== 'LI'){
       element = $(element).parent();
     }
     element.toggleClass('open');
-  }
-
+  };
   abrirDropMenu(event){
     let element = $(event.target);
     let isOpened = element.get(0).getAttribute('aria-expanded');
@@ -302,8 +298,7 @@ export class Util {
       element.get(0).setAttribute('aria-expanded',true);
     }
     $(element).parent().toggleClass('open');
-  }
-
+  };
   abrirDropButton(event){
     debugger;
     let element = $(event.target);
@@ -319,23 +314,22 @@ export class Util {
       element.get(0).setAttribute('aria-expanded',true);
     }
     element.parent().toggleClass('open');
-  }
-
+  };
   getUrlActual(){
     let url = window.location.href.toString();
     return url.split('4200')[1];
-  }
-
+  };
   showPopUpById(id){
     $('#'+id).fadeIn();
     $('#'+id).toggleClass('in');
     $('body').append($('<div>', {class: 'modal-backdrop fade in'}));
-  }
-
+  };
   hidePopUpById(id){
     $('#'+id).fadeOut();
     $('#'+id).toggleClass('in');
     $('.modal-backdrop').remove();
-  }
-
+  };
+  mostrarPreloader(){
+    $('#preloader').show();
+  };
 }

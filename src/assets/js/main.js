@@ -364,7 +364,6 @@
   		  }, {accX: 0, accY: -150});
   		});
       }
-
     }
 
     function initMap() {
@@ -728,7 +727,10 @@
     }
 
     function initPdfMedia(){
-      $('a.media').media({width:710, height:950});
+      var url = window.location.href;
+      if (url.includes("file-viewer")) {
+        $('a.media').media({width:710, height:950});
+      }
     }
 
     function initXEditable(){
@@ -927,213 +929,222 @@
     }
 
     function initTreeView(){
-      $('#jstree1').jstree({
-            'core' : {
-                'check_callback' : true
-            },
-            'plugins' : [ 'types', 'dnd' ],
-            'types' : {
-                'default' : {
-                    'icon' : 'fa fa-folder'
-                },
-                'html' : {
-                    'icon' : 'fa fa-file-code-o'
-                },
-                'svg' : {
-                    'icon' : 'fa fa-file-picture-o'
-                },
-                'css' : {
-                    'icon' : 'fa fa-file-code-o'
-                },
-                'img' : {
-                    'icon' : 'fa fa-file-image-o'
-                },
-                'js' : {
-                    'icon' : 'fa fa-file-text-o'
-                }
+      var url = window.location.href;
+      if (url.includes("tree")) {
+        $('#jstree1').jstree({
+              'core' : {
+                  'check_callback' : true
+              },
+              'plugins' : [ 'types', 'dnd' ],
+              'types' : {
+                  'default' : {
+                      'icon' : 'fa fa-folder'
+                  },
+                  'html' : {
+                      'icon' : 'fa fa-file-code-o'
+                  },
+                  'svg' : {
+                      'icon' : 'fa fa-file-picture-o'
+                  },
+                  'css' : {
+                      'icon' : 'fa fa-file-code-o'
+                  },
+                  'img' : {
+                      'icon' : 'fa fa-file-image-o'
+                  },
+                  'js' : {
+                      'icon' : 'fa fa-file-text-o'
+                  }
 
-            }
-        });
+              }
+          });
 
-      $('#using_json').jstree({
-            'core' : {
-            'data' : [
-                'Empty Folder',
-                {
-                    'text': 'Resources',
-                    'state': {
-                        'opened': true
-                    },
-                    'children': [
-                        {
-                            'text': 'css',
-                            'children': [
-                                {
-                                    'text': 'animate.css', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'bootstrap.css', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'main.css', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'style.css', 'icon': 'none'
-                                }
-                            ],
-                            'state': {
-                                'opened': true
-                            }
-                        },
-                        {
-                            'text': 'js',
-                            'children': [
-                                {
-                                    'text': 'bootstrap.js', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'inspinia.min.js', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'jquery.min.js', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'jsTree.min.js', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'custom.min.js', 'icon': 'none'
-                                }
-                            ],
-                            'state': {
-                                'opened': true
-                            }
-                        },
-                        {
-                            'text': 'html',
-                            'children': [
-                                {
-                                    'text': 'layout.html', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'navigation.html', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'navbar.html', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'footer.html', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'sidebar.html', 'icon': 'none'
-                                }
-                            ],
-                            'state': {
-                                'opened': true
-                            }
-                        }
-                    ]
-                },
-                'Fonts',
-                'Images',
-                'Scripts',
-                'Templates',
-            ]
-        } });
+        $('#using_json').jstree({
+              'core' : {
+              'data' : [
+                  'Empty Folder',
+                  {
+                      'text': 'Resources',
+                      'state': {
+                          'opened': true
+                      },
+                      'children': [
+                          {
+                              'text': 'css',
+                              'children': [
+                                  {
+                                      'text': 'animate.css', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'bootstrap.css', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'main.css', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'style.css', 'icon': 'none'
+                                  }
+                              ],
+                              'state': {
+                                  'opened': true
+                              }
+                          },
+                          {
+                              'text': 'js',
+                              'children': [
+                                  {
+                                      'text': 'bootstrap.js', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'inspinia.min.js', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'jquery.min.js', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'jsTree.min.js', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'custom.min.js', 'icon': 'none'
+                                  }
+                              ],
+                              'state': {
+                                  'opened': true
+                              }
+                          },
+                          {
+                              'text': 'html',
+                              'children': [
+                                  {
+                                      'text': 'layout.html', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'navigation.html', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'navbar.html', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'footer.html', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'sidebar.html', 'icon': 'none'
+                                  }
+                              ],
+                              'state': {
+                                  'opened': true
+                              }
+                          }
+                      ]
+                  },
+                  'Fonts',
+                  'Images',
+                  'Scripts',
+                  'Templates',
+              ]
+          } });
+      }
     }
 
     function initCropperImg(){
-      var $image = $(".image-crop > img")
-      $($image).cropper({
-          aspectRatio: 1.618,
-          preview: ".img-preview",
-          done: function(data) {
-              // Output the result data for cropping image.
-          }
-      });
+      var url = window.location.href;
+      if (url.includes("images")) {
+        var $image = $(".image-crop > img")
+        $($image).cropper({
+            aspectRatio: 1.618,
+            preview: ".img-preview",
+            done: function(data) {
+                // Output the result data for cropping image.
+            }
+        });
 
-      var $inputImage = $("#inputImage");
-      if (window.FileReader) {
-          $inputImage.change(function() {
-              var fileReader = new FileReader(),
-                      files = this.files,
-                      file;
+        var $inputImage = $("#inputImage");
+        if (window.FileReader) {
+            $inputImage.change(function() {
+                var fileReader = new FileReader(),
+                        files = this.files,
+                        file;
 
-              if (!files.length) {
-                  return;
-              }
+                if (!files.length) {
+                    return;
+                }
 
-              file = files[0];
+                file = files[0];
 
-              if (/^image\/\w+$/.test(file.type)) {
-                  fileReader.readAsDataURL(file);
-                  fileReader.onload = function () {
-                      $inputImage.val("");
-                      $image.cropper("reset", true).cropper("replace", this.result);
-                  };
-              } else {
-                  showMessage("Please choose an image file.");
-              }
-          });
-      } else {
-          $inputImage.addClass("hide");
+                if (/^image\/\w+$/.test(file.type)) {
+                    fileReader.readAsDataURL(file);
+                    fileReader.onload = function () {
+                        $inputImage.val("");
+                        $image.cropper("reset", true).cropper("replace", this.result);
+                    };
+                } else {
+                    showMessage("Please choose an image file.");
+                }
+            });
+        } else {
+            $inputImage.addClass("hide");
+        }
+
+        $("#download").on('click', function() {
+            window.open($image.cropper("getDataURL"));
+        });
+
+        $("#zoomIn").on('click', function() {
+            $image.cropper("zoom", 0.1);
+        });
+
+        $("#zoomOut").on('click', function() {
+            $image.cropper("zoom", -0.1);
+        });
+
+        $("#rotateLeft").on('click', function() {
+            $image.cropper("rotate", 45);
+        });
+
+        $("#rotateRight").on('click', function() {
+            $image.cropper("rotate", -45);
+        });
+
+        $("#setDrag").on('click', function() {
+            $image.cropper("setDragMode", "crop");
+        });
       }
-
-      $("#download").on('click', function() {
-          window.open($image.cropper("getDataURL"));
-      });
-
-      $("#zoomIn").on('click', function() {
-          $image.cropper("zoom", 0.1);
-      });
-
-      $("#zoomOut").on('click', function() {
-          $image.cropper("zoom", -0.1);
-      });
-
-      $("#rotateLeft").on('click', function() {
-          $image.cropper("rotate", 45);
-      });
-
-      $("#rotateRight").on('click', function() {
-          $image.cropper("rotate", -45);
-      });
-
-      $("#setDrag").on('click', function() {
-          $image.cropper("setDragMode", "crop");
-      });
     }
 
     function initPies(){
-      $("span.pie").peity("pie", {
-           fill: ['#a063a8', '#d7d7d7', '#ffffff']
-       })
+      var url = window.location.href;
+      if (url.includes("peity")) {
+        $("span.pie").peity("pie", {
+             fill: ['#a063a8', '#d7d7d7', '#ffffff']
+         })
 
-       $(".line").peity("line",{
-           fill: '#a063a8',
-           stroke:'#169c81',
-       })
+         $(".line").peity("line",{
+             fill: '#a063a8',
+             stroke:'#169c81',
+         })
 
-       $(".bar").peity("bar", {
-           fill: ["#a063a8", "#d7d7d7"]
-       })
+         $(".bar").peity("bar", {
+             fill: ["#a063a8", "#d7d7d7"]
+         })
 
-       $(".bar_dashboard").peity("bar", {
-           fill: ["#a063a8", "#d7d7d7"],
-           width:100
-       })
+         $(".bar_dashboard").peity("bar", {
+             fill: ["#a063a8", "#d7d7d7"],
+             width:100
+         })
 
-       var updatingChart = $(".updating-chart").peity("line", { fill: '#a063a8',stroke:'#169c81', width: 64 })
+         var updatingChart = $(".updating-chart").peity("line", { fill: '#a063a8',stroke:'#169c81', width: 64 })
 
-       setInterval(function() {
-           var random = Math.round(Math.random() * 10)
-           var values = updatingChart.text().split(",")
-           values.shift()
-           values.push(random)
+         setInterval(function() {
+             var random = Math.round(Math.random() * 10)
+             var values = updatingChart.text().split(",")
+             values.shift()
+             values.push(random)
 
-           updatingChart
-               .text(values.join(","))
-               .change()
-       }, 1000);
+             updatingChart
+                 .text(values.join(","))
+                 .change()
+         }, 1000);
+       }
     }
 
     function initCharts(){
@@ -2441,190 +2452,197 @@
     }
 
     function initKnob(){
+
       	$(".dial").knob();
     }
 
     function initSliders(){
-      /*
-      * IONRANGE
-      */
-      $("#ionrange_1").ionRangeSlider({
-    		min: 0,
-    		max: 5000,
-    		type: 'double',
-    		prefix: "$",
-    		maxPostfix: "+",
-    		prettify: false,
-    		hasGrid: true
-    	});
-    	$("#ionrange_2").ionRangeSlider({
-                min: 0,
-                max: 10,
-                type: 'single',
-                step: 0.1,
-                postfix: " carats",
-                prettify: false,
-                hasGrid: true
-            });
-    	 $("#ionrange_3").ionRangeSlider({
-    		min: -50,
-    		max: 50,
-    		from: 0,
-    		postfix: "&deg;",
-    		prettify: false,
-    		hasGrid: true
-    	});
-
-    	$("#ionrange_4").ionRangeSlider({
-    		values: [
-    			"January", "February", "March",
-    			"April", "May", "June",
-    			"July", "August", "September",
-    			"October", "November", "December"
-    		],
-    		type: 'single',
-    		hasGrid: true
-    	});
-
-      /*
-      * RANGLE
-      */
-      var initialSpark = 60;
-			var sparkTooltip = function(event, ui) {
-				var curSpark = ui.value  || initialSpark
-				var sparktip = '<span class="slider-tip">' + curSpark + '</span>';
-				$(this).find('.ui-slider-handle').html(sparktip);
-			}
-
-			$("#slider9").slider({
-				orientation: "vertical",
-				range: "min",
-				min: 1,
-				max: 100,
-				step: 1,
-				value: initialSpark,
-				create: sparkTooltip,
-				slide: sparkTooltip
-			});
-
-			$("#slider6").slider({
-				orientation: "vertical",
-				range: "min",
-				min: 0,
-				max: 100,
-				value: 60,
-				slide: function(event, ui) {
-					$("#volume").val(ui.value);
-				}
-			});
-
-			$("#volume").val(
-				$("#slider6").slider("value")
-			);
-
-      $("#slider7").slider({
-        orientation: "vertical",
-        range: true,
-        values: [27, 67],
-        slide: function(event, ui) {
-        	$("#sales").val("$" + ui.values[0] + " - $" + ui.values[1]);
-        }
-      });
-      $("#sales").val( "$" + $("#slider7").slider("values", 0) + " - $" + $("#slider7").slider("values", 1));
-
-      var verticalRangle = localStorage.getItem("verticalRangle");
       var url = window.location.href;
-      if(verticalRangle !== '1'){
-        $("#eq > .sliderv-wrapper").each(function() {
-          var value = parseInt($(this).text(), 10);
-          	$(this).slider({
-          	value: value,
-          	range: "min",
-          	animate: true,
-          	orientation: "vertical"
-          });
+      if (url.includes("advance")) {
+        /*
+        * IONRANGE
+        */
+        $("#ionrange_1").ionRangeSlider({
+      		min: 0,
+      		max: 5000,
+      		type: 'double',
+      		prefix: "$",
+      		maxPostfix: "+",
+      		prettify: false,
+      		hasGrid: true
+      	});
+      	$("#ionrange_2").ionRangeSlider({
+                  min: 0,
+                  max: 10,
+                  type: 'single',
+                  step: 0.1,
+                  postfix: " carats",
+                  prettify: false,
+                  hasGrid: true
         });
+      	$("#ionrange_3").ionRangeSlider({
+      		min: -50,
+      		max: 50,
+      		from: 0,
+      		postfix: "&deg;",
+      		prettify: false,
+      		hasGrid: true
+      	});
+      	$("#ionrange_4").ionRangeSlider({
+      		values: [
+      			"January", "February", "March",
+      			"April", "May", "June",
+      			"July", "August", "September",
+      			"October", "November", "December"
+      		],
+      		type: 'single',
+      		hasGrid: true
+      	});
 
-  			$("#eq2 > .sliderv-wrapper").each(function() {
-  				var value = parseInt($(this).text(), 10);
-  					$(this).slider({
-  					value: value,
-  					range: "min",
-  					animate: true,
-  					orientation: "vertical"
-  				});
+        /*
+        * RANGLE
+        */
+        var initialSpark = 60;
+  			var sparkTooltip = function(event, ui) {
+  				var curSpark = ui.value  || initialSpark
+  				var sparktip = '<span class="slider-tip">' + curSpark + '</span>';
+  				$(this).find('.ui-slider-handle').html(sparktip);
+  			}
+
+  			$("#slider9").slider({
+  				orientation: "vertical",
+  				range: "min",
+  				min: 1,
+  				max: 100,
+  				step: 1,
+  				value: initialSpark,
+  				create: sparkTooltip,
+  				slide: sparkTooltip
   			});
 
-        localStorage.setItem("verticalRangle","1");
+  			$("#slider6").slider({
+  				orientation: "vertical",
+  				range: "min",
+  				min: 0,
+  				max: 100,
+  				value: 60,
+  				slide: function(event, ui) {
+  					$("#volume").val(ui.value);
+  				}
+  			});
+
+  			$("#volume").val(
+
+  				$("#slider6").slider("value")
+  			);
+
+        $("#slider7").slider({
+          orientation: "vertical",
+          range: true,
+          values: [27, 67],
+          slide: function(event, ui) {
+          	$("#sales").val("$" + ui.values[0] + " - $" + ui.values[1]);
+          }
+        });
+
+        $("#sales").val( "$" + $("#slider7").slider("values", 0) + " - $" + $("#slider7").slider("values", 1));
+
+        var verticalRangle = localStorage.getItem("verticalRangle");
+        var url = window.location.href;
+        if(verticalRangle !== '1'){
+          $("#eq > .sliderv-wrapper").each(function() {
+            var value = parseInt($(this).text(), 10);
+            	$(this).slider({
+            	value: value,
+            	range: "min",
+            	animate: true,
+            	orientation: "vertical"
+            });
+          });
+
+    			$("#eq2 > .sliderv-wrapper").each(function() {
+    				var value = parseInt($(this).text(), 10);
+    					$(this).slider({
+    					value: value,
+    					range: "min",
+    					animate: true,
+    					orientation: "vertical"
+    				});
+    			});
+
+          localStorage.setItem("verticalRangle","1");
+        }
+
+    		var initialYear = 1980;
+    		var yearTooltip = function(event, ui) {
+    			var curYear = ui.value || initialYear
+    			var yeartip = '<span class="slider-tip">' + curYear + '</span>';
+    			$(this).find('.ui-slider-handle').html(yeartip);
+    		}
+
+  			$("#slider10").slider({
+  				value: initialYear,
+  				range: "min",
+  				min: 1950,
+  				max: 2020,
+  				step: 1,
+  				create: yearTooltip,
+  				slide: yearTooltip
+  			});
+
+  			$('#slider8').slider({
+  				range: true,
+  				values: [500, 1500],
+  				min: 10,
+  				max: 2000,
+  				step: 10,
+  				slide: function(event, ui) {
+  					$("#budget").val("$" + ui.values[0] + " - $" + ui.values[1]);
+  				}
+  			});
+
+  			$("#budget").val("$" + $("#slider8").slider("values", 0) + " - $" + $("#slider8").slider("values", 1));
+
+  			$("#slider").slider({
+  				range: "min",
+  				min: 10,
+  				max: 100,
+  				value: 80
+  			});
+
+  			$("#slider1").slider({
+  				range: true,
+  				values: [17, 83]
+  			});
+
+  			$( "#slider2" ).slider({
+  				range: "min",
+  				value: 140,
+  				min: 1,
+  				max: 800,
+  				slide: function(event, ui) {
+  					$("#amount").val("$" + ui.value);
+  				}
+  			});
+
+  			$("#amount").val(
+  				"$" + $("#slider2").slider("value")
+  			);
+
+  			$("#slider3").slider({
+  				range: "max",
+  				min: 1,
+  				max: 10,
+  				value: 2,
+  				slide: function(event, ui) {
+  					$("#bedrooms").val(ui.value);
+  				}
+  			});
+
+  			$("#bedrooms").val(
+  				$("#slider3").slider("value")
+  			);
       }
-
-  		var initialYear = 1980;
-  		var yearTooltip = function(event, ui) {
-  			var curYear = ui.value || initialYear
-  			var yeartip = '<span class="slider-tip">' + curYear + '</span>';
-  			$(this).find('.ui-slider-handle').html(yeartip);
-  		}
-
-			$("#slider10").slider({
-				value: initialYear,
-				range: "min",
-				min: 1950,
-				max: 2020,
-				step: 1,
-				create: yearTooltip,
-				slide: yearTooltip
-			});
-
-			$('#slider8').slider({
-				range: true,
-				values: [500, 1500],
-				min: 10,
-				max: 2000,
-				step: 10,
-				slide: function(event, ui) {
-					$("#budget").val("$" + ui.values[0] + " - $" + ui.values[1]);
-				}
-			});
-			$("#budget").val("$" + $("#slider8").slider("values", 0) + " - $" + $("#slider8").slider("values", 1));
-
-			$("#slider").slider({
-				range: "min",
-				min: 10,
-				max: 100,
-				value: 80
-			});
-			$("#slider1").slider({
-				range: true,
-				values: [17, 83]
-			});
-
-			$( "#slider2" ).slider({
-				range: "min",
-				value: 140,
-				min: 1,
-				max: 800,
-				slide: function(event, ui) {
-					$("#amount").val("$" + ui.value);
-				}
-			});
-
-			$("#amount").val(
-				"$" + $("#slider2").slider("value")
-			);
-
-			$("#slider3").slider({
-				range: "max",
-				min: 1,
-				max: 10,
-				value: 2,
-				slide: function(event, ui) {
-					$("#bedrooms").val(ui.value);
-				}
-			});
-
-			$("#bedrooms").val(
-				$("#slider3").slider("value")
-			);
     }
 
     function initChosen(){
@@ -2638,7 +2656,9 @@
     }
 
     function initSelectColor(){
-      // HEX
+      var url = window.location.href;
+      if (url.includes("advance")) {
+        // HEX
    			$("#hex").spectrum({
    				color: "#f00",
    				preferredFormat: "hex",
@@ -2693,122 +2713,137 @@
    			});
    			// Method "show"
    			$("#hex, #hsl, #rgb, #a-hsl, #a-rgb, #palette1, #palette2").show();
+      }
     }
 
     function initTouchSpin(){
-      $(".touchspin1").TouchSpin({
-    		buttondown_class: 'btn btn-white',
-    		buttonup_class: 'btn btn-white'
-    	});
+      var url = window.location.href;
+      if (url.includes("advance")) {
+        $(".touchspin1").TouchSpin({
+      		buttondown_class: 'btn btn-white',
+      		buttonup_class: 'btn btn-white'
+      	});
 
-    	$(".touchspin2").TouchSpin({
-    		min: 0,
-    		max: 100,
-    		step: 0.1,
-    		decimals: 2,
-    		boostat: 5,
-    		maxboostedstep: 10,
-    		postfix: '%',
-    		buttondown_class: 'btn btn-white',
-    		buttonup_class: 'btn btn-white'
-    	});
+      	$(".touchspin2").TouchSpin({
+      		min: 0,
+      		max: 100,
+      		step: 0.1,
+      		decimals: 2,
+      		boostat: 5,
+      		maxboostedstep: 10,
+      		postfix: '%',
+      		buttondown_class: 'btn btn-white',
+      		buttonup_class: 'btn btn-white'
+      	});
 
-    	$(".touchspin3").TouchSpin({
-    		verticalbuttons: true,
-    		buttondown_class: 'btn btn-white',
-    		buttonup_class: 'btn btn-white'
-    	});
+      	$(".touchspin3").TouchSpin({
+      		verticalbuttons: true,
+      		buttondown_class: 'btn btn-white',
+      		buttonup_class: 'btn btn-white'
+      	});
+      }
     }
 
     function initPasswordMeter(){
-      var passmeter = localStorage.getItem("passmeter");
-      if(passmeter !== '1'){
-        // Example 1
-        var options1 = {};
-        options1.ui = {
-            container: "#pwd-container1",
-            showVerdictsInsideProgressBar: true,
-            viewports: {
-                progress: ".pwstrength_viewport_progress"
-            }
-        };
-        options1.common = {
-            debug: false,
-        };
-        $('.example1').pwstrength(options1);
+      var url = window.location.href;
+      if (url.includes("password")) {
+        var passmeter = localStorage.getItem("passmeter");
+        if(passmeter !== '1'){
+          // Example 1
+          var options1 = {};
+          options1.ui = {
+              container: "#pwd-container1",
+              showVerdictsInsideProgressBar: true,
+              viewports: {
+                  progress: ".pwstrength_viewport_progress"
+              }
+          };
+          options1.common = {
+              debug: false,
+          };
+          $('.example1').pwstrength(options1);
 
-        // Example 2
-        var options2 = {};
-        options2.ui = {
-            container: "#pwd-container2",
-            showStatus: true,
-            showProgressBar: false,
-            viewports: {
-                verdict: ".pwstrength_viewport_verdict"
-            }
-        };
-        $('.example2').pwstrength(options2);
+          // Example 2
+          var options2 = {};
+          options2.ui = {
+              container: "#pwd-container2",
+              showStatus: true,
+              showProgressBar: false,
+              viewports: {
+                  verdict: ".pwstrength_viewport_verdict"
+              }
+          };
+          $('.example2').pwstrength(options2);
 
-        // Example 3
-        var options3 = {};
-        options3.ui = {
-            container: "#pwd-container3",
-            showVerdictsInsideProgressBar: true,
-            viewports: {
-                progress: ".pwstrength_viewport_progress2"
-            }
-        };
-        options3.common = {
-            debug: true,
-            usernameField: "#username"
-        };
-        $('.example3').pwstrength(options3);
+          // Example 3
+          var options3 = {};
+          options3.ui = {
+              container: "#pwd-container3",
+              showVerdictsInsideProgressBar: true,
+              viewports: {
+                  progress: ".pwstrength_viewport_progress2"
+              }
+          };
+          options3.common = {
+              debug: true,
+              usernameField: "#username"
+          };
+          $('.example3').pwstrength(options3);
 
-        // Example 4
-        var options4 = {};
-        options4.ui = {
-            container: "#pwd-container4",
-            viewports: {
-                progress: ".pwstrength_viewport_progress4",
-                verdict: ".pwstrength_viewport_verdict4"
-            }
-        };
-        options4.common = {
-            zxcvbn: true,
-            zxcvbnTerms: ['samurai', 'shogun', 'bushido', 'daisho', 'seppuku'],
-            userInputs: ['#year', '#familyname']
-        };
-        $('.example4').pwstrength(options4);
+          // Example 4
+          var options4 = {};
+          options4.ui = {
+              container: "#pwd-container4",
+              viewports: {
+                  progress: ".pwstrength_viewport_progress4",
+                  verdict: ".pwstrength_viewport_verdict4"
+              }
+          };
+          options4.common = {
+              zxcvbn: true,
+              zxcvbnTerms: ['samurai', 'shogun', 'bushido', 'daisho', 'seppuku'],
+              userInputs: ['#year', '#familyname']
+          };
+          $('.example4').pwstrength(options4);
 
-        localStorage.setItem("passmeter", "1");
+          localStorage.setItem("passmeter", "1");
+        }
       }
     }
 
     function initSummernote(){
-      $('#summernote1').summernote({
-    		height: 200,
-    	});
-    	$('#summernote2').summernote({
-    		height: 200,
-    	});
-    	$('#summernote3').summernote({
-    		height: 200,
-    	});
-    	$('#summernote4').summernote({
-    		height: 200,
-    	});
-    	$('#summernote5').summernote({
-    		height: 400,
-    	});
+      var url = window.location.href;
+      if (url.includes("editor")) {
+        $('#summernote1').summernote({
+      		height: 200,
+      	});
+      	$('#summernote2').summernote({
+      		height: 200,
+      	});
+      	$('#summernote3').summernote({
+      		height: 200,
+      	});
+      	$('#summernote4').summernote({
+      		height: 200,
+      	});
+      	$('#summernote5').summernote({
+      		height: 400,
+      	});
+      }
     }
 
     function initDualList(){
-      $('.dual_select').bootstrapDualListbox({
-  			selectorMinimalHeight: 160
-  		});
+      var url = window.location.href;
+      if (url.includes("dual")) {
+        $('.dual_select').bootstrapDualListbox({
+    			selectorMinimalHeight: 160
+    		});
+      }
     }
 
     function initNotifications(){
+      var url = window.location.href;
+      if (url.includes("notifications")) {
         var noty = localStorage.getItem("noty");
         if(noty !== '1'){
             // Mini Notifications active class
@@ -3177,6 +3212,7 @@
 
             localStorage.setItem("noty", "1");
         }
+      }
     }
     /*--------------------------
 		 END FUNCTIONS CMVB

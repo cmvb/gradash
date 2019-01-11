@@ -12,94 +12,94 @@
                 <li (click)="util.abrirNav($event)" class="nav-item">
                     <a  data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle "><i class="fa big-icon fa-home"></i> <span class="mini-dn">Home</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-right"></i></span></a>
                     <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                        <a routerLink="/dashboard" class="dropdown-item">Dashboard</a>
-                        <a routerLink="/analytics" class="dropdown-item">Analytics</a>
-                        <a routerLink="/widgets" class="dropdown-item">Widgets</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/dashboard" class="dropdown-item">Dashboard</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/analytics" class="dropdown-item">Analytics</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/widgets" class="dropdown-item">Widgets</a>
                     </div>
                 </li>
                 <li (click)="util.abrirNav($event)" class="nav-item"><a  data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle "><i class="fa big-icon fa-envelope"></i> <span class="mini-dn">Mailbox</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-right"></i></span></a>
                     <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                        <a routerLink="/inbox" class="dropdown-item">Inbox</a>
-                        <a routerLink="/view-mail" class="dropdown-item">Ver E-Mail</a>
-                        <a routerLink="/compose-mail" class="dropdown-item">Crear E-Mail</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/inbox" class="dropdown-item">Inbox</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/view-mail" class="dropdown-item">Ver E-Mail</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/compose-mail" class="dropdown-item">Crear E-Mail</a>
                     </div>
                 </li>
                 <li (click)="util.abrirNav($event)" class="nav-item"><a  data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle "><i class="fa big-icon fa-flask"></i> <span class="mini-dn">Interface</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-right"></i></span></a>
                     <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                        <a routerLink="/maps" class="dropdown-item">Google Map</a>
-                        <a routerLink="/data-maps" class="dropdown-item">Data Maps</a>
-                        <a routerLink="/file-viewer" class="dropdown-item">PDF Visor</a>
-                        <a routerLink="/x-editable" class="dropdown-item">X-Editable</a>
-                        <a routerLink="/code-editor" class="dropdown-item">Editor de Código</a>
-                        <a routerLink="/tree-view" class="dropdown-item">Vista de Árbol</a>
-                        <a routerLink="/preloader" class="dropdown-item">Preloader</a>
-                        <a routerLink="/images-cropper" class="dropdown-item">Corta Imágenes</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/maps" class="dropdown-item">Google Map</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/data-maps" class="dropdown-item">Data Maps</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/file-viewer" class="dropdown-item">PDF Visor</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/x-editable" class="dropdown-item">X-Editable</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/code-editor" class="dropdown-item">Editor de Código</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/tree-view" class="dropdown-item">Vista de Árbol</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/preloader" class="dropdown-item">Preloader</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/images-cropper" class="dropdown-item">Corta Imágenes</a>
                     </div>
                 </li>
                 <li (click)="util.abrirNav($event)" class="nav-item"><a  data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle "><i class="fa big-icon fa-pie-chart"></i> <span class="mini-dn">Miscellaneous</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-right"></i></span></a>
                     <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                        <a routerLink="/profile" class="dropdown-item">Mi Perfil</a>
-                        <a routerLink="/contact-client" class="dropdown-item">Contacto</a>
-                        <a routerLink="/project-list" class="dropdown-item">Lista de Projectos</a>
-                        <a routerLink="/project-details" class="dropdown-item">Detalles de Projectos</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/profile" class="dropdown-item">Mi Perfil</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/contact-client" class="dropdown-item">Contacto</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/project-list" class="dropdown-item">Lista de Projectos</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/project-details" class="dropdown-item">Detalles de Projectos</a>
                     </div>
                 </li>
                 <li (click)="util.abrirNav($event)" class="nav-item"><a  data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle "><i class="fa big-icon fa-bar-chart-o"></i> <span class="mini-dn">Charts</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-right"></i></span></a>
                     <div role="menu" class="dropdown-menu left-menu-dropdown chart-left-menu-std animated flipInX">
-                        <a routerLink="/bar-charts" class="dropdown-item">Diagramas de Barras</a>
-                        <a routerLink="/line-charts" class="dropdown-item">Diagramas de Líneas</a>
-                        <a routerLink="/area-charts" class="dropdown-item">Diagramas de Superficies</a>
-                        <a routerLink="/rounded-charts" class="dropdown-item">Diagramas Geométricos</a>
-                        <a routerLink="/c3-charts" class="dropdown-item">C3 Diagramas</a>
-                        <a routerLink="/sparklines-charts" class="dropdown-item">Diagramas de Líneas Estilizadas</a>
-                        <a routerLink="/peity-charts" class="dropdown-item">Peity Diagramas</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/bar-charts" class="dropdown-item">Diagramas de Barras</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/line-charts" class="dropdown-item">Diagramas de Líneas</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/area-charts" class="dropdown-item">Diagramas de Superficies</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/rounded-charts" class="dropdown-item">Diagramas Geométricos</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/c3-charts" class="dropdown-item">C3 Diagramas</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/sparklines-charts" class="dropdown-item">Diagramas de Líneas Estilizadas</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/peity-charts" class="dropdown-item">Peity Diagramas</a>
                     </div>
                 </li>
                 <li (click)="util.abrirNav($event)" class="nav-item"><a  data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle "><i class="fa big-icon fa-table"></i> <span class="mini-dn">Data Tables</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-right"></i></span></a>
                     <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                        <a routerLink="/static-table" class="dropdown-item">Static Table</a>
-                        <a routerLink="/data-table" class="dropdown-item">Data Table</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/static-table" class="dropdown-item">Static Table</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/data-table" class="dropdown-item">Data Table</a>
                     </div>
                 </li>
                 <li (click)="util.abrirNav($event)" class="nav-item"><a  data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle "><i class="fa big-icon fa-edit"></i> <span class="mini-dn">Forms Elements</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-right"></i></span></a>
                     <div role="menu" class="dropdown-menu left-menu-dropdown form-left-menu-std animated flipInX">
-                        <a routerLink="/basic-elements" class="dropdown-item">Elementos Básicos</a>
-                        <a routerLink="/advance-elements" class="dropdown-item">Elementos Avanzados</a>
-                        <a routerLink="/password-meter" class="dropdown-item">Medidor de Contraseñas</a>
-                        <a routerLink="/multi-upload" class="dropdown-item">Multi Upload</a>
-                        <a routerLink="/text-editor" class="dropdown-item">Editor de Texto</a>
-                        <a routerLink="/dual-list-box" class="dropdown-item">Lista Dual</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/basic-elements" class="dropdown-item">Elementos Básicos</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/advance-elements" class="dropdown-item">Elementos Avanzados</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/password-meter" class="dropdown-item">Medidor de Contraseñas</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/multi-upload" class="dropdown-item">Multi Upload</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/text-editor" class="dropdown-item">Editor de Texto</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/dual-list-box" class="dropdown-item">Lista Dual</a>
                     </div>
                 </li>
                 <li (click)="util.abrirNav($event)" class="nav-item"><a  data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle "><i class="fa big-icon fa-desktop"></i> <span class="mini-dn">App views</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-right"></i></span></a>
                     <div role="menu" class="dropdown-menu left-menu-dropdown apps-left-menu-std animated flipInX">
-                        <a routerLink="/notifications" class="dropdown-item">Notificaciones</a>
-                        <a routerLink="/alerts" class="dropdown-item">Alertas</a>
-                        <a routerLink="/modals" class="dropdown-item">Pop-Ups</a>
-                        <a routerLink="/buttons" class="dropdown-item">Botones</a>
-                        <a routerLink="/tabs" class="dropdown-item">Tabs</a>
-                        <a routerLink="/accordions" class="dropdown-item">Accordions</a>
-                        <a routerLink="/tab-menus" class="dropdown-item">Tab-Menús</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/notifications" class="dropdown-item">Notificaciones</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/alerts" class="dropdown-item">Alertas</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/modals" class="dropdown-item">Pop-Ups</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/buttons" class="dropdown-item">Botones</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/tabs" class="dropdown-item">Tabs</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/accordions" class="dropdown-item">Accordions</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/tab-menus" class="dropdown-item">Tab-Menús</a>
                     </div>
                 </li>
                 <li (click)="util.abrirNav($event)" class="nav-item"><a  data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle "><i class="fa big-icon fa-desktop"></i> <span class="mini-dn">Icons</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-right"></i></span></a>
                     <div role="menu" class="dropdown-menu left-menu-dropdown apps-left-menu-std animated flipInX">
-                        <a routerLink="/icons" class="dropdown-item">Template Icons</a>
-                        <a routerLink="/linea-icons" class="dropdown-item">Linea Icons</a>
-                        <a routerLink="/metriza-icons" class="dropdown-item">Metriza Icons</a>
-                        <a routerLink="/open-iconic-icons" class="dropdown-item">Open Iconic Icons</a>
-                        <a routerLink="/themify-icons" class="dropdown-item">Themify Icons</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/icons" class="dropdown-item">Template Icons</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/linea-icons" class="dropdown-item">Linea Icons</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/metriza-icons" class="dropdown-item">Metriza Icons</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/open-iconic-icons" class="dropdown-item">Open Iconic Icons</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/themify-icons" class="dropdown-item">Themify Icons</a>
                     </div>
                 </li>
                 <li (click)="util.abrirNav($event)" class="nav-item"><a  data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle "><i class="fa big-icon fa-files-o"></i> <span class="mini-dn">Pages</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-right"></i></span></a>
                     <div role="menu" class="dropdown-menu left-menu-dropdown pages-left-menu-std animated flipInX">
-                        <a routerLink="/register" class="dropdown-item">Register</a>
-                        <a routerLink="/captcha" class="dropdown-item">Captcha</a>
-                        <a routerLink="/checkout" class="dropdown-item">Checkout</a>
-                        <a routerLink="/contacts" class="dropdown-item">Contacts</a>
-                        <a routerLink="/review" class="dropdown-item">Review</a>
-                        <a routerLink="/order" class="dropdown-item">Order</a>
-                        <a routerLink="/comment" class="dropdown-item">Comment</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/register" class="dropdown-item">Register</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/captcha" class="dropdown-item">Captcha</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/checkout" class="dropdown-item">Checkout</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/contacts" class="dropdown-item">Contacts</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/review" class="dropdown-item">Review</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/order" class="dropdown-item">Order</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/comment" class="dropdown-item">Comment</a>
                     </div>
                 </li>
             </ul>
