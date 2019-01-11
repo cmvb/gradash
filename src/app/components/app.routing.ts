@@ -40,10 +40,14 @@ import {NotificationsComponent} from './notifications/notifications.component';
 import {AlertsComponent} from './alerts/alerts.component';
 import {ModalsComponent} from './modals/modals.component';
 import {ButtonsComponent} from './buttons/buttons.component';
-import {IconsComponent} from './icons/icons.component';
 import {AccordionsComponent} from './accordions/accordions.component';
 import {TabsComponent} from './tabs/tabs.component';
 import {TabMenusComponent} from './tab-menus/tab-menus.component';
+import {IconsComponent} from './icons/icons.component';
+import {LineaIconsComponent} from './linea-icons/linea-icons.component';
+import {MetrizaIconsComponent} from './metriza-icons/metriza-icons.component';
+import {OpenIconicIconsComponent} from './open-iconic-icons/open-iconic-icons.component';
+import {ThemifyIconsComponent} from './themify-icons/themify-icons.component';
 import {RegisterComponent} from './register/register.component';
 import {CaptchaComponent} from './captcha/captcha.component';
 import {CheckoutComponent} from './checkout/checkout.component';
@@ -93,17 +97,21 @@ const routes: Routes = [
   {path: 'alerts', component: AlertsComponent, canActivate: [LoginGuard]},
   {path: 'modals', component: ModalsComponent, canActivate: [LoginGuard]},
   {path: 'buttons', component: ButtonsComponent, canActivate: [LoginGuard]},
-  {path: 'icons', component: IconsComponent, canActivate: [LoginGuard]},
   {path: 'tabs', component: TabsComponent, canActivate: [LoginGuard]},
   {path: 'accordions', component: AccordionsComponent, canActivate: [LoginGuard]},
   {path: 'tab-menus', component: TabMenusComponent, canActivate: [LoginGuard]},
+  {path: 'icons', component: IconsComponent, canActivate: [LoginGuard]},
+  {path: 'linea-icons', component: LineaIconsComponent, canActivate: [LoginGuard]},
+  {path: 'metriza-icons', component: MetrizaIconsComponent, canActivate: [LoginGuard]},
+  {path: 'open-iconic-icons', component: OpenIconicIconsComponent, canActivate: [LoginGuard]},
+  {path: 'themify-icons', component: ThemifyIconsComponent, canActivate: [LoginGuard]},
   {path: 'register', component: RegisterComponent, canActivate: [LoginGuard]},
   {path: 'captcha', component: CaptchaComponent, canActivate: [LoginGuard]},
   {path: 'checkout', component: CheckoutComponent, canActivate: [LoginGuard]},
   {path: 'contacts', component: ContactsComponent, canActivate: [LoginGuard]},
   {path: 'review', component: ReviewComponent, canActivate: [LoginGuard]},
   {path: 'order', component: OrderComponent, canActivate: [LoginGuard]},
-  {path: 'comment', component: CommentComponent, canActivate: [LoginGuard]},
+  {path: 'comment', component: CommentComponent, canActivate: [LoginGuard]},  
 
 
   {path: '', redirectTo: 'home', pathMatch: 'full'},

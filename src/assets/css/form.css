@@ -32,7 +32,7 @@
 }
 .login-input-area .login-user{
 	position:absolute;
-	top:10px;
+	top:5px;
 	right:0;
 	height:35px;
 	width:35px;
@@ -240,7 +240,7 @@
 }
 .rating > input:checked ~ label, .rating:not(:checked) > label:hover, .rating:not(:checked) > label:hover ~ label {
   color: #a063a8;
-} 
+}
 .rating > input:checked + label:hover, .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label, .rating > input:checked ~ label:hover ~ label {
   color: #a063a8;
@@ -289,7 +289,7 @@
 	font-size: 15px;
 	line-height: 27px;
 }
-.ui-datepicker-prev, 
+.ui-datepicker-prev,
 .ui-datepicker-next {
 	position: absolute;
 	top: 0;
@@ -324,7 +324,7 @@
 	color: #404040;
 }
 .ui-datepicker-calendar a:hover {
-	background: rgba(0,0,0,.05);	
+	background: rgba(0,0,0,.05);
 }
 .ui-datepicker-calendar span {
 	color: #bfbfbf;
@@ -334,7 +334,7 @@
 }
 .ui-datepicker-calendar .ui-state-active {
 	background: rgba(0,0,0,.05);
-	cursor: default;	
+	cursor: default;
 }
 .ui-datepicker-inline {
 	border: 2px solid #e5e5e5;

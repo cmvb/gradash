@@ -380,7 +380,7 @@ the specific language governing permissions and limitations under the Apache Lic
             '&': '&amp;',
             '<': '&lt;',
             '>': '&gt;',
-            '"': '&quot;',
+            '"': ''',
             "'": '&#39;',
             "/": '&#47;'
         };

@@ -77,10 +77,18 @@
                         <a routerLink="/alerts" class="dropdown-item">Alertas</a>
                         <a routerLink="/modals" class="dropdown-item">Pop-Ups</a>
                         <a routerLink="/buttons" class="dropdown-item">Botones</a>
-                        <a routerLink="/icons" class="dropdown-item">Íconos</a>
                         <a routerLink="/tabs" class="dropdown-item">Tabs</a>
                         <a routerLink="/accordions" class="dropdown-item">Accordions</a>
                         <a routerLink="/tab-menus" class="dropdown-item">Tab-Menús</a>
+                    </div>
+                </li>
+                <li (click)="util.abrirNav($event)" class="nav-item"><a  data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle "><i class="fa big-icon fa-desktop"></i> <span class="mini-dn">Icons</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-right"></i></span></a>
+                    <div role="menu" class="dropdown-menu left-menu-dropdown apps-left-menu-std animated flipInX">
+                        <a routerLink="/icons" class="dropdown-item">Template Icons</a>
+                        <a routerLink="/linea-icons" class="dropdown-item">Linea Icons</a>
+                        <a routerLink="/metriza-icons" class="dropdown-item">Metriza Icons</a>
+                        <a routerLink="/open-iconic-icons" class="dropdown-item">Open Iconic Icons</a>
+                        <a routerLink="/themify-icons" class="dropdown-item">Themify Icons</a>
                     </div>
                 </li>
                 <li (click)="util.abrirNav($event)" class="nav-item"><a  data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle "><i class="fa big-icon fa-files-o"></i> <span class="mini-dn">Pages</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-right"></i></span></a>
