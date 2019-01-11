@@ -929,180 +929,186 @@
     }
 
     function initTreeView(){
-      $('#jstree1').jstree({
-            'core' : {
-                'check_callback' : true
-            },
-            'plugins' : [ 'types', 'dnd' ],
-            'types' : {
-                'default' : {
-                    'icon' : 'fa fa-folder'
-                },
-                'html' : {
-                    'icon' : 'fa fa-file-code-o'
-                },
-                'svg' : {
-                    'icon' : 'fa fa-file-picture-o'
-                },
-                'css' : {
-                    'icon' : 'fa fa-file-code-o'
-                },
-                'img' : {
-                    'icon' : 'fa fa-file-image-o'
-                },
-                'js' : {
-                    'icon' : 'fa fa-file-text-o'
-                }
+      var url = window.location.href;
+      if (url.includes("tree")) {
+        $('#jstree1').jstree({
+              'core' : {
+                  'check_callback' : true
+              },
+              'plugins' : [ 'types', 'dnd' ],
+              'types' : {
+                  'default' : {
+                      'icon' : 'fa fa-folder'
+                  },
+                  'html' : {
+                      'icon' : 'fa fa-file-code-o'
+                  },
+                  'svg' : {
+                      'icon' : 'fa fa-file-picture-o'
+                  },
+                  'css' : {
+                      'icon' : 'fa fa-file-code-o'
+                  },
+                  'img' : {
+                      'icon' : 'fa fa-file-image-o'
+                  },
+                  'js' : {
+                      'icon' : 'fa fa-file-text-o'
+                  }
 
-            }
-        });
+              }
+          });
 
-      $('#using_json').jstree({
-            'core' : {
-            'data' : [
-                'Empty Folder',
-                {
-                    'text': 'Resources',
-                    'state': {
-                        'opened': true
-                    },
-                    'children': [
-                        {
-                            'text': 'css',
-                            'children': [
-                                {
-                                    'text': 'animate.css', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'bootstrap.css', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'main.css', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'style.css', 'icon': 'none'
-                                }
-                            ],
-                            'state': {
-                                'opened': true
-                            }
-                        },
-                        {
-                            'text': 'js',
-                            'children': [
-                                {
-                                    'text': 'bootstrap.js', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'inspinia.min.js', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'jquery.min.js', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'jsTree.min.js', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'custom.min.js', 'icon': 'none'
-                                }
-                            ],
-                            'state': {
-                                'opened': true
-                            }
-                        },
-                        {
-                            'text': 'html',
-                            'children': [
-                                {
-                                    'text': 'layout.html', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'navigation.html', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'navbar.html', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'footer.html', 'icon': 'none'
-                                },
-                                {
-                                    'text': 'sidebar.html', 'icon': 'none'
-                                }
-                            ],
-                            'state': {
-                                'opened': true
-                            }
-                        }
-                    ]
-                },
-                'Fonts',
-                'Images',
-                'Scripts',
-                'Templates',
-            ]
-        } });
+        $('#using_json').jstree({
+              'core' : {
+              'data' : [
+                  'Empty Folder',
+                  {
+                      'text': 'Resources',
+                      'state': {
+                          'opened': true
+                      },
+                      'children': [
+                          {
+                              'text': 'css',
+                              'children': [
+                                  {
+                                      'text': 'animate.css', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'bootstrap.css', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'main.css', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'style.css', 'icon': 'none'
+                                  }
+                              ],
+                              'state': {
+                                  'opened': true
+                              }
+                          },
+                          {
+                              'text': 'js',
+                              'children': [
+                                  {
+                                      'text': 'bootstrap.js', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'inspinia.min.js', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'jquery.min.js', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'jsTree.min.js', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'custom.min.js', 'icon': 'none'
+                                  }
+                              ],
+                              'state': {
+                                  'opened': true
+                              }
+                          },
+                          {
+                              'text': 'html',
+                              'children': [
+                                  {
+                                      'text': 'layout.html', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'navigation.html', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'navbar.html', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'footer.html', 'icon': 'none'
+                                  },
+                                  {
+                                      'text': 'sidebar.html', 'icon': 'none'
+                                  }
+                              ],
+                              'state': {
+                                  'opened': true
+                              }
+                          }
+                      ]
+                  },
+                  'Fonts',
+                  'Images',
+                  'Scripts',
+                  'Templates',
+              ]
+          } });
+      }
     }
 
     function initCropperImg(){
-      var $image = $(".image-crop > img")
-      $($image).cropper({
-          aspectRatio: 1.618,
-          preview: ".img-preview",
-          done: function(data) {
-              // Output the result data for cropping image.
-          }
-      });
+      var url = window.location.href;
+      if (url.includes("images")) {
+        var $image = $(".image-crop > img")
+        $($image).cropper({
+            aspectRatio: 1.618,
+            preview: ".img-preview",
+            done: function(data) {
+                // Output the result data for cropping image.
+            }
+        });
 
-      var $inputImage = $("#inputImage");
-      if (window.FileReader) {
-          $inputImage.change(function() {
-              var fileReader = new FileReader(),
-                      files = this.files,
-                      file;
+        var $inputImage = $("#inputImage");
+        if (window.FileReader) {
+            $inputImage.change(function() {
+                var fileReader = new FileReader(),
+                        files = this.files,
+                        file;
 
-              if (!files.length) {
-                  return;
-              }
+                if (!files.length) {
+                    return;
+                }
 
-              file = files[0];
+                file = files[0];
 
-              if (/^image\/\w+$/.test(file.type)) {
-                  fileReader.readAsDataURL(file);
-                  fileReader.onload = function () {
-                      $inputImage.val("");
-                      $image.cropper("reset", true).cropper("replace", this.result);
-                  };
-              } else {
-                  showMessage("Please choose an image file.");
-              }
-          });
-      } else {
-          $inputImage.addClass("hide");
+                if (/^image\/\w+$/.test(file.type)) {
+                    fileReader.readAsDataURL(file);
+                    fileReader.onload = function () {
+                        $inputImage.val("");
+                        $image.cropper("reset", true).cropper("replace", this.result);
+                    };
+                } else {
+                    showMessage("Please choose an image file.");
+                }
+            });
+        } else {
+            $inputImage.addClass("hide");
+        }
+
+        $("#download").on('click', function() {
+            window.open($image.cropper("getDataURL"));
+        });
+
+        $("#zoomIn").on('click', function() {
+            $image.cropper("zoom", 0.1);
+        });
+
+        $("#zoomOut").on('click', function() {
+            $image.cropper("zoom", -0.1);
+        });
+
+        $("#rotateLeft").on('click', function() {
+            $image.cropper("rotate", 45);
+        });
+
+        $("#rotateRight").on('click', function() {
+            $image.cropper("rotate", -45);
+        });
+
+        $("#setDrag").on('click', function() {
+            $image.cropper("setDragMode", "crop");
+        });
       }
-
-      $("#download").on('click', function() {
-          window.open($image.cropper("getDataURL"));
-      });
-
-      $("#zoomIn").on('click', function() {
-          $image.cropper("zoom", 0.1);
-      });
-
-      $("#zoomOut").on('click', function() {
-          $image.cropper("zoom", -0.1);
-      });
-
-      $("#rotateLeft").on('click', function() {
-          $image.cropper("rotate", 45);
-      });
-
-      $("#rotateRight").on('click', function() {
-          $image.cropper("rotate", -45);
-      });
-
-      $("#setDrag").on('click', function() {
-          $image.cropper("setDragMode", "crop");
-      });
     }
 
     function initPies(){

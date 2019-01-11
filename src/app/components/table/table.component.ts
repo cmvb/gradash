@@ -17,7 +17,7 @@ export var sizeList = 0;
 })
 
 export class TableComponent implements OnInit {
-  @Input() lista: any[];
+  @Input() lista = [];
   @Input() cabeceras: any[];
   
   @Input() btnEditar: any[];

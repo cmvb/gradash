@@ -289,6 +289,7 @@ html, body {
 
 html, body.materialdesign {
   background: #ebebeb;
+  overflow-x: hidden;
 }
 
 .floatleft {
@@ -609,22 +610,30 @@ padding: 0;
 	position:relative;
 }
 .indicator-nt{
-	position:absolute;
-	height:5px;
-	width:5px;
-	background: #f43662;
-	border-radius:50%;
-	top: -5px;
-    right: 0px;
+	position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #f43662;
+  border-radius: 50%;
+  top: -5px;
+  right: -10px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 15px;
+  vertical-align: middle;
 }
 .indicator-ms{
-	position:absolute;
-	height:5px;
-	width:5px;
-	background:#00BCD4;
-	border-radius:50%;
-	top: -5px;
-    right: -7px;
+	position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #00BCD4;
+  border-radius: 50%;
+  top: -5px;
+  right: -10px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 15px;
+  vertical-align: middle;
 }
 .header-right-info .admin-name{
 	display: inline-block;
@@ -1105,11 +1114,10 @@ ul.breadcome-menu li a:hover{
 .bread-blod{
 	font-weight:700;
 }
-
-
 .sparkline-hd, .smart-sparkline-hd, .sparkline7-hd, .sparkline8-hd, .sparkline9-hd, .sparkline10-hd, .sparkline11-hd, .sparkline12-hd, .sparkline13-hd, .sparkline14-hd, .sparkline15-hd, .sparkline16-hd{
-	background:#f9f9f9;
-	border-bottom:1px solid #fff;
+  background: #4c5795;
+  border-bottom: 1px solid #d0d0d0;
+  color: #FFF;
 }
 .sparkline-hd, .smart-sparkline-hd, .sparkline7-hd, .sparkline8-hd, .sparkline9-hd, .sparkline10-hd, .sparkline11-hd, .sparkline12-hd, .sparkline13-hd, .sparkline14-hd, .sparkline15-hd, .sparkline16-hd{
 	padding: 15px 20px;
@@ -1119,7 +1127,7 @@ ul.breadcome-menu li a:hover{
 }
 .main-spark-hd h1, .smart-main-spark-hd h1, .main-spark7-hd h1, .main-sparkline8-hd h1, .main-sparkline9-hd h1, .main-sparkline10-hd h1, .main-sparkline11-hd h1, .main-sparkline12-hd h1, .main-sparkline13-hd h1, .main-sparkline14-hd h1, .main-sparkline15-hd h1, .main-sparkline16-hd h1{
 	font-size:20px;
-	color:#303030;
+	color:#FFF;
 	position:relative;
 	margin:0px;
 }
@@ -3840,7 +3848,7 @@ ul.profile-contact-menu {
   	transition: all 0.3s;
     height: 100%;
     min-height: 100vh;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 .header-drl-controller-btn.btn-info{
 	background-color: #2b2a2a;
@@ -3942,7 +3950,7 @@ ul.profile-contact-menu {
 	left:0px;
 	top:0px;
 	opacity:0;
-	width:180px;
+	width:220px;
 	border-radius:0;
 	border:0px solid #fff;
 	box-shadow:none;
@@ -3991,7 +3999,11 @@ ul.profile-contact-menu {
     font-size:20px;
 }
 #sidebar.active .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li > a {
-    padding: 20px 20px;
+    padding: 10px 20px;
+}
+
+#sidebar.active .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li > a {
+    background:red;
 }
 
 .darklayout .welcome-wrapper, .darklayout .dashboard-line-chart, .darklayout .dashone-adminprowrap, .darklayout  .sparkline-content, .darklayout  .sparkline7-graph, .darklayout  .sparkline8-graph, .darklayout  .sparkline9-graph, .darklayout  .sparkline10-graph, .darklayout  .sparkline11-graph, .darklayout  .sparkline12-graph, .darklayout  .sparkline13-graph, .darklayout  .sparkline14-graph, .darklayout  .sparkline15-graph, .darklayout  .sparkline16-graph, .darklayout .income-title, .darklayout .income-dashone-pro, .darklayout .dashtwo-order-list, .darklayout .tab-content-details, .darklayout .admin-pro-accordion-wrap, .darklayout .smart-sparkline-list, .darklayout .login-bg{
@@ -4529,4 +4541,15 @@ a.Primary, a.Information, a.Warning, a.Danger, a.Alert, .modal-footer a{
   font-size: 10px !important;
   color: #759fd4 !important;
   text-shadow: 1px 1px 1px #76c7a0;
+}
+
+.preloader-bg{
+  position: fixed;
+  top: -30px;
+  height: 100vh;
+  width: 100%;
+}
+
+.pd-bottom-30{
+  padding-bottom: 30px;
 }

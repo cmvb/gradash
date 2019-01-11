@@ -26,7 +26,6 @@ export class LoginGuard implements CanActivate {
     localStorage.setItem("code1","0");
     localStorage.setItem("code2","0");
 
-    debugger;
     let sesionOK = true;
     if(!URLactual.includes("home") && URLactual !== 'http://localhost:4200/'){
       let usuarioSesion = localStorage.getItem('usuarioSesion') === null ? null : JSON.parse(localStorage.getItem('usuarioSesion').toString());

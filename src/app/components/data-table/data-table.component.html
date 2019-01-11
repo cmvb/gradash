@@ -6,15 +6,16 @@
     <app-header-mobile></app-header-mobile>
     <app-breadcrumb-mobile></app-breadcrumb-mobile>
 
-    <div class="row justify-content-center">                                    
-        <div class="col-md-12 col-sm-12 col-xs-12">
-            <app-table [btnEditar]="btnEditar" [btnEliminar]="btnEliminar"
-                (enviarObjetoEditar)="editar($event)"
-                (enviarObjetoEliminar)="eliminar($event)"
-                [cabeceras]="listaCabeceras" [lista]="listaConsulta"></app-table>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class=" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <app-table [btnEditar]="btnEditar" [btnEliminar]="btnEliminar"
+                    (enviarObjetoEditar)="editar($event)"
+                    (enviarObjetoEliminar)="eliminar($event)"
+                    [cabeceras]="listaCabeceras" [lista]="listaConsulta"></app-table>
+            </div>
         </div>
     </div>
-
   </div>
   <app-footer></app-footer>
 </div>

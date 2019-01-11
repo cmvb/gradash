@@ -24,7 +24,7 @@ export class DataTableComponent implements OnInit {
   usuario: any;
 
   rtaDelete: any;
-  listaConsulta = [];
+  listaConsulta: any;
   btnEditar = true;
   btnEliminar = true;
   listaCabeceras = [
@@ -45,7 +45,7 @@ export class DataTableComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.listaConsulta = this.findAllUsuarios();
+    this.findAllUsuarios();
   }
 
   findAllUsuarios() {
@@ -102,7 +102,7 @@ export class DataTableComponent implements OnInit {
 			alert("Borrado Fallido");
           }
 
-          console.log(rtaDelete);
+          console.log(this.rtaDelete);
         },
         error => {
           console.log(error, "error");
