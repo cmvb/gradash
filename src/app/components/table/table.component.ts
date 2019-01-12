@@ -9,6 +9,7 @@ import {Observable} from 'rxjs';
 import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
 
 export var sizeList = 0;
+declare var $: any;
 
 @Component({
   selector: 'app-table',
@@ -49,6 +50,10 @@ export class TableComponent implements OnInit {
   }
 
   ngOnInit() {
+    var button = $('.toggleTable').find('i');
+    if(button.hasClass('fa-chevron-down')){
+      button.toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
+    }
   }
 
   editar(obj) {
@@ -60,4 +65,27 @@ export class TableComponent implements OnInit {
     this.enviarObjetoEliminar.emit(obj);
     return true;
   }
+
+  toggleTable(){
+    var button = $('.toggleTable').find('i');
+    button.toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
+    $(".container-datatable").slideToggle("slow");
+  }
+
+  closeTable(){
+    $(".container-datatable").fadeOut(100);
+    var button = $('.toggleTable').find('i');
+    if(button.hasClass('fa-chevron-up')){
+      button.toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
+    }
+  }
+
+  openTable(){
+    $(".container-datatable").fadeIn(100);
+    var button = $('.toggleTable').find('i');
+    if(button.hasClass('fa-chevron-down')){      
+      button.toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
+    }
+  }
+
 }
