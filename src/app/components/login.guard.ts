@@ -31,9 +31,9 @@ export class LoginGuard implements CanActivate {
       let usuarioSesion = localStorage.getItem('usuarioSesion') === null ? null : JSON.parse(localStorage.getItem('usuarioSesion').toString());
       sesionOK = false;
 
-      if(usuarioSesion !== null){
-        if(usuarioSesion.tbSesion.tokenSesion != null && usuarioSesion.tbSesion.tokenSesion.length > 0){
-          if(usuarioSesion.tbSesion.activo != null && usuarioSesion.tbSesion.activo === 1){
+      if(usuarioSesion !== null){ 
+        if(usuarioSesion.tbSesion !== undefined && usuarioSesion.tbSesion.tokenSesion !== null && usuarioSesion.tbSesion.tokenSesion.length > 0){
+          if(usuarioSesion.tbSesion.activo !== null && usuarioSesion.tbSesion.activo === 1){
             if(usuarioSesion.tbSesion.mensajeErrorSesion === undefined || usuarioSesion.tbSesion.mensajeErrorSesion.length === 0 || usuarioSesion.tbSesion.mensajeErrorSesion === null){
               sesionOK = true;
             }

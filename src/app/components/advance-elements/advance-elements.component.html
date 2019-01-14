@@ -1039,11 +1039,16 @@
                         </div>
                         <div class="sparkline16-graph">
                             <div class="date-picker-inner">
+                                <p>Simple datepicker</p>
+
                                 <div class="form-group data-custon-pick" id="data_1">
                                     <label>Simple data input format</label>
                                     <div class="input-group date">
                                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                        <input type="text" class="form-control" value="10/04/2018">
+                                        <input [minDate]="const.minDate" [maxDate]="fechaActual"
+                                                class="form-control datepicker"
+                                                [(ngModel)]="fechaNacimiento" ngbDatepicker
+                                                #a="ngbDatepicker" (click)="a.toggle()">
                                     </div>
                                 </div>
                                 <div class="form-group data-custon-pick" id="data_2">

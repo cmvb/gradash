@@ -4560,6 +4560,7 @@ a.Primary, a.Information, a.Warning, a.Danger, a.Alert, .modal-footer a{
   top: -30px;
   height: 100vh;
   width: 100%;
+  z-index: 10000;
 }
 
 .pd-bottom-30{
@@ -4590,4 +4591,324 @@ a.Primary, a.Information, a.Warning, a.Danger, a.Alert, .modal-footer a{
 
 .materialdesign .header-top-menu .navbar-nav>li .dropdown-menu a:hover, .materialdesign .header-right-info ul.header-right-menu li .dropdown-header-top.author-log li a:hover, .materialdesign .header-right-info ul.header-right-menu li .dropdown-header-top.author-log li a:focus, .materialdesign .header-drl-controller-btn.btn-info:active:focus, .btn-info:active:hover{
   background: #00000052;
+}
+
+.modal-footer{
+  text-align: center;
+}
+
+.bb-btn{
+  min-width: 200px;
+}
+
+.obligatorio:before{
+  content: '*';
+  color: red;
+}
+
+/*bubbly-button*/
+.bubbly-button {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 0 2px 25px #999;
+}
+.bubbly-button:focus {
+  outline: 0;
+}
+.bubbly-button:before, .bubbly-button:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+/*Colores Shine*/
+.btn-default.bubbly-button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(ellipse, #999 20%, transparent 20%), radial-gradient(circle, transparent 20%, #999 20%, transparent 30%), radial-gradient(circle, #999 20%, transparent 20%), radial-gradient(circle, #999 20%, transparent 20%), radial-gradient(circle, transparent 10%, #999 15%, transparent 20%), radial-gradient(circle, #999 20%, transparent 20%), radial-gradient(circle, #999 20%, transparent 20%), radial-gradient(circle, #999 20%, transparent 20%), radial-gradient(circle, #999 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.btn-default.bubbly-button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(ellipse, #999 20%, transparent 20%), radial-gradient(circle, #999 20%, transparent 20%), radial-gradient(circle, transparent 10%, #999 15%, transparent 20%), radial-gradient(circle, #999 20%, transparent 20%), radial-gradient(circle, #999 20%, transparent 20%), radial-gradient(circle, #999 20%, transparent 20%), radial-gradient(circle, #999 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.btn-primary.bubbly-button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(ellipse, #a063a8 20%, transparent 20%), radial-gradient(circle, transparent 20%, #a063a8 20%, transparent 30%), radial-gradient(circle, #a063a8 20%, transparent 20%), radial-gradient(circle, #a063a8 20%, transparent 20%), radial-gradient(circle, transparent 10%, #a063a8 15%, transparent 20%), radial-gradient(circle, #a063a8 20%, transparent 20%), radial-gradient(circle, #a063a8 20%, transparent 20%), radial-gradient(circle, #a063a8 20%, transparent 20%), radial-gradient(circle, #a063a8 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.btn-primary.bubbly-button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(ellipse, #a063a8 20%, transparent 20%), radial-gradient(circle, #a063a8 20%, transparent 20%), radial-gradient(circle, transparent 10%, #a063a8 15%, transparent 20%), radial-gradient(circle, #a063a8 20%, transparent 20%), radial-gradient(circle, #a063a8 20%, transparent 20%), radial-gradient(circle, #a063a8 20%, transparent 20%), radial-gradient(circle, #a063a8 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.btn-info.bubbly-button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(ellipse, #5bc0de 20%, transparent 20%), radial-gradient(circle, transparent 20%, #5bc0de 20%, transparent 30%), radial-gradient(circle, #5bc0de 20%, transparent 20%), radial-gradient(circle, #5bc0de 20%, transparent 20%), radial-gradient(circle, transparent 10%, #5bc0de 15%, transparent 20%), radial-gradient(circle, #5bc0de 20%, transparent 20%), radial-gradient(circle, #5bc0de 20%, transparent 20%), radial-gradient(circle, #5bc0de 20%, transparent 20%), radial-gradient(circle, #5bc0de 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.btn-info.bubbly-button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(ellipse, #5bc0de 20%, transparent 20%), radial-gradient(circle, #5bc0de 20%, transparent 20%), radial-gradient(circle, transparent 10%, #5bc0de 15%, transparent 20%), radial-gradient(circle, #5bc0de 20%, transparent 20%), radial-gradient(circle, #5bc0de 20%, transparent 20%), radial-gradient(circle, #5bc0de 20%, transparent 20%), radial-gradient(circle, #5bc0de 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.btn-warning.bubbly-button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(ellipse, #f0ad4e 20%, transparent 20%), radial-gradient(circle, transparent 20%, #f0ad4e 20%, transparent 30%), radial-gradient(circle, #f0ad4e 20%, transparent 20%), radial-gradient(circle, #f0ad4e 20%, transparent 20%), radial-gradient(circle, transparent 10%, #f0ad4e 15%, transparent 20%), radial-gradient(circle, #f0ad4e 20%, transparent 20%), radial-gradient(circle, #f0ad4e 20%, transparent 20%), radial-gradient(circle, #f0ad4e 20%, transparent 20%), radial-gradient(circle, #f0ad4e 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.btn-warning.bubbly-button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(ellipse, #f0ad4e 20%, transparent 20%), radial-gradient(circle, #f0ad4e 20%, transparent 20%), radial-gradient(circle, transparent 10%, #f0ad4e 15%, transparent 20%), radial-gradient(circle, #f0ad4e 20%, transparent 20%), radial-gradient(circle, #f0ad4e 20%, transparent 20%), radial-gradient(circle, #f0ad4e 20%, transparent 20%), radial-gradient(circle, #f0ad4e 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.btn-danger.bubbly-button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(ellipse, #d9534f 20%, transparent 20%), radial-gradient(circle, transparent 20%, #d9534f 20%, transparent 30%), radial-gradient(circle, #d9534f 20%, transparent 20%), radial-gradient(circle, #d9534f 20%, transparent 20%), radial-gradient(circle, transparent 10%, #d9534f 15%, transparent 20%), radial-gradient(circle, #d9534f 20%, transparent 20%), radial-gradient(circle, #d9534f 20%, transparent 20%), radial-gradient(circle, #d9534f 20%, transparent 20%), radial-gradient(circle, #d9534f 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.btn-danger.bubbly-button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(ellipse, #d9534f 20%, transparent 20%), radial-gradient(circle, #d9534f 20%, transparent 20%), radial-gradient(circle, transparent 10%, #d9534f 15%, transparent 20%), radial-gradient(circle, #d9534f 20%, transparent 20%), radial-gradient(circle, #d9534f 20%, transparent 20%), radial-gradient(circle, #d9534f 20%, transparent 20%), radial-gradient(circle, #d9534f 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+/*Colores Shine*/
+
+.bubbly-button:hover {
+  transform: scale(0.9);
+}
+.bubbly-button.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+.bubbly-button.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+  }
+}
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+  }
+}
+.first {
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+.first:hover {
+  box-shadow: 0 0 40px 40px #e74c3c inset;
+}
+
+.second {
+  border-radius: 3em;
+  border-color: #1abc9c;
+  color: #fff;
+  background-image: linear-gradient(to right, rgba(26, 188, 156, 0.6), rgba(26, 188, 156, 0.6) 5%, #1abc9c 5%, #1abc9c 10%, rgba(26, 188, 156, 0.6) 10%, rgba(26, 188, 156, 0.6) 15%, #1abc9c 15%, #1abc9c 20%, rgba(26, 188, 156, 0.6) 20%, rgba(26, 188, 156, 0.6) 25%, #1abc9c 25%, #1abc9c 30%, rgba(26, 188, 156, 0.6) 30%, rgba(26, 188, 156, 0.6) 35%, #1abc9c 35%, #1abc9c 40%, rgba(26, 188, 156, 0.6) 40%, rgba(26, 188, 156, 0.6) 45%, #1abc9c 45%, #1abc9c 50%, rgba(26, 188, 156, 0.6) 50%, rgba(26, 188, 156, 0.6) 55%, #1abc9c 55%, #1abc9c 60%, rgba(26, 188, 156, 0.6) 60%, rgba(26, 188, 156, 0.6) 65%, #1abc9c 65%, #1abc9c 70%, rgba(26, 188, 156, 0.6) 70%, rgba(26, 188, 156, 0.6) 75%, #1abc9c 75%, #1abc9c 80%, rgba(26, 188, 156, 0.6) 80%, rgba(26, 188, 156, 0.6) 85%, #1abc9c 85%, #1abc9c 90%, rgba(26, 188, 156, 0.6) 90%, rgba(26, 188, 156, 0.6) 95%, #1abc9c 95%, #1abc9c 100%);
+  background-position: 0 0;
+  background-size: 100%;
+  transition: background 300ms ease-in-out;
+}
+.second:hover {
+  background-position: 100px;
+}
+
+.third {
+  border-color: #3498db;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+  transition: all 150ms ease-in-out;
+}
+.third:hover {
+  box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+}
+
+.fourth {
+  border-color: #f1c40f;
+  color: #fff;
+  background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  transition: background 300ms ease-in-out;
+}
+.fourth:hover {
+  background-position: 0;
+}
+
+.fifth {
+  border-color: #8e44ad;
+  border-radius: 0;
+  color: #8e44ad;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 150ms ease-in-out;
+}
+.fifth:after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 0;
+  height: 100%;
+  background: #8e44ad;
+  z-index: -1;
+  transition: width 150ms ease-in-out;
+}
+.fifth:hover {
+  color: #fff;
+}
+.fifth:hover:after {
+  width: 110%;
+}
+
+.sixth {
+  border-radius: 3em;
+  border-color: #2ecc71;
+  color: #2ecc71;
+  background-image: linear-gradient(to bottom, transparent 50%, #2ecc71 50%);
+  background-position: 0% 0%;
+  background-size: 210%;
+  transition: background 150ms ease-in-out, color 150ms ease-in-out;
+}
+.sixth:hover {
+  color: #fff;
+  background-position: 0 100%;
+}
+
+.contenedor-paginador{
+  text-align: center;
+  width: 100%;
+}
+
+.contenedor-paginador:after {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 17%, rgba(0, 0, 0, 0.1) 83%, rgba(0, 0, 0, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#00000000',GradientType=1 );
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+table { 
+  width: 750px; 
+  border-collapse: collapse; 
+  margin:50px auto;
+  }
+
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  background: #eee; 
+  }
+
+th { 
+  background: #3498db; 
+  color: white; 
+  font-weight: bold; 
+  }
+
+td, th { 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
+  font-size: 18px;
+  }
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+  table { 
+      width: 100%; 
+  }
+
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr { 
+    display: block; 
+  }
+  
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  tr { border: 1px solid #ccc; }
+  
+  td { 
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee; 
+    position: relative;
+    padding-left: 50%; 
+  }
+
+  td:before { 
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+    /* Label the data */
+    content: attr(data-column);
+
+    color: #000;
+    font-weight: bold;
+  }
+
+}
+
+.align-items-center{
+  text-align: center;
 }

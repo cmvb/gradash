@@ -31,6 +31,14 @@ export class DataObjects {
     }
   };
 
+  getDataBase() {
+    return {
+      codigo:0,
+      descripcion:'',
+      valor: false
+    }
+  };
+
   getDataUsuario() {
     return {
         //Usuario

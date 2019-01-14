@@ -28,13 +28,13 @@
 				<tr
 					*ngFor="let o of lista | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
 					<td class="btnActions">
-						<button *ngIf="btnEditar" (click)="editar(o)" type="button"
-							class="btn btn-warning btn-just-icon swEditar" placement="right"
+						<button (mouseenter)="util.pulseEffect($event)" *ngIf="btnEditar" (click)="editar(o)" type="button"
+							class="btn btn-warning btn-just-icon swEditar bubbly-button" placement="right"
 							ngbTooltip="Editar">
 							<i class="fa fa-pencil-square-o"></i>
 						</button>
-						<button *ngIf="btnEliminar" (click)="eliminar(o)" type="button"
-							class="btn btn-danger btn-just-icon swEliminar" placement="right"
+						<button (mouseenter)="util.pulseEffect($event)" *ngIf="btnEliminar" (click)="eliminar(o)" type="button"
+							class="btn btn-danger btn-just-icon swEliminar bubbly-button" placement="right"
 							ngbTooltip="Eliminar">
 							<i class="fa fa-trash-o"></i>
 						</button>
@@ -64,11 +64,15 @@
 			</ng-template>
 		
 		</table>
+
+
+
+
 		
 		<div *ngIf="lista.length > 0;"
-			class="row justify-content-center contenedor-paginador">
+			class="row justify-content-center">
 			<div style="padding-top: 7px; max-height: 45px;"
-				class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6">
+				class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6 contenedor-paginador">
 				<pagination-controls (pageChange)="p = $event" autoHide="true"
 					previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
 			</div>

@@ -1,6 +1,12 @@
 /*----------------------------------------*/
 /*  1.  Alert CSS
 /*----------------------------------------*/
+.alert{
+	text-align: justify !important;
+	padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 25px;
+}
 .alert-title h2{
 	font-size:20px;
 }
@@ -100,7 +106,7 @@
 }
 .alert-st-one .message-mg-rt, .alert-st-two .message-mg-rt, .alert-st-three .message-mg-rt, .alert-st-four .message-mg-rt{
 	color:#fff;
-	margin:0px 0px 0px 60px;
+	margin:0px 30px 0px 60px;
 	font-size:14px;
 }
 .alert-success-style1 .icon-sc-cl, .alert-success-style2 .icon-sc-cl, .alert-success-style3 .icon-sc-cl, .alert-success-style4 .icon-sc-cl{

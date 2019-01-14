@@ -16,6 +16,103 @@
             </div>
         </div>
     </div>
+
+    <div id="modalForm" class="modal modal-adminpro-general fullwidth-popup-DangerproModal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-close-area modal-close-df">
+                    <a class="close" (click)="util.hidePopUpById('modalForm')"><i class="fa fa-close"></i></a>
+                </div>
+                <div class="modal-body">
+                    <h2>Actualizar Usuario</h2>
+                    <div class="row justify-content-center">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sparkline9-list shadow-reset">
+                            <div class="sparkline9-graph">
+                                <div class="basic-login-form-ad">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <form id="formUsr">
+                                                <div class="basic-login-inner">
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-4">
+                                                                <label class="login2 obligatorio">Usuario # {{usuarioEdit.idUsuario}}</label>
+                                                            </div>
+                                                            <div class="col-lg-8">
+                                                                <input [ngModelOptions]="{standalone: true}" disabled="true" type="text" class="form-control" [(ngModel)]="usuarioEdit.usuario" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-4">
+                                                                <label class="login2 obligatorio">1er Nombre</label>
+                                                            </div>
+                                                            <div class="col-lg-8">
+                                                                <input [ngModelOptions]="{standalone: true}" type="text" class="form-control" [(ngModel)]="usuarioEdit.primerNombre" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-4">
+                                                                <label class="login2">2do Nombre</label>
+                                                            </div>
+                                                            <div class="col-lg-8">
+                                                                <input [ngModelOptions]="{standalone: true}" type="text" class="form-control" [(ngModel)]="usuarioEdit.segundoNombre" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-4">
+                                                                <label class="login2 obligatorio">1er Apellido</label>
+                                                            </div>
+                                                            <div class="col-lg-8">
+                                                                <input [ngModelOptions]="{standalone: true}" type="text" class="form-control" [(ngModel)]="usuarioEdit.primerApellido" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-4">
+                                                                <label class="login2">2do Apellido</label>
+                                                            </div>
+                                                            <div class="col-lg-8">
+                                                                <input [ngModelOptions]="{standalone: true}" type="text" class="form-control" [(ngModel)]="usuarioEdit.segundoApellido" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <button class="bubbly-button btn btn-danger bb-btn" (mouseenter)="util.pulseEffect($event)" (click)="util.hidePopUpById('modalForm')">Cancelar</button>
+                      <button class="bubbly-button btn btn-info bb-btn" (mouseenter)="util.pulseEffect($event)" (click)="guardar()">Actualizar</button>
+                    </div>
+                  </div>
+                  <div id="alertUsr" class="alert alert-{{claseBt}} alert-st-{{claseBtId}} animated fadeIn {{mostrarAlert}}" role="alert">
+                      <button (click)="ocultarAlert()" type="button" class="close sucess-op" data-dismiss="alert" aria-label="Close">
+                          <span class="icon-sc-cl" aria-hidden="true">&times;</span>
+                      </button>
+                      <span class="adminpro-icon adminpro-checked-pro admin-check-pro"></span>
+                      <p class="message-mg-rt"><strong>Exitoso: ({{rta.codigo}}) [</strong>{{rta.descripcion}}]</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
   </div>
   <app-footer></app-footer>
 </div>

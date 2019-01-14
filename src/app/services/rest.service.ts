@@ -3,7 +3,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable'
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Access-Control-Expose-Headers':'Access-Control-*',
+    'Access-Control-Allow-Headers': 'Access-Control-*, Origin, X-Requested-With, Content-Type, Accept',
+    'Access-Control-Allow-Methods':'GET, POST, PUT, DELETE, OPTIONS, HEAD',
+    'Access-Control-Allow-Origin': '*',
+    'Allow':'GET, POST, PUT, DELETE, OPTIONS, HEAD'
+  })
+
 };
 
 @Injectable({
@@ -25,6 +33,6 @@ export class RestService {
   }
 
   deleteREST(url, id) {
-    return this.http.delete(url + id)
+    return this.http.delete(url + id);
   }
 }
