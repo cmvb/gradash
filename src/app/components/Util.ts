@@ -332,4 +332,12 @@ export class Util {
   mostrarPreloader(){
     $('#preloader').show();
   };
+
+  pulseEffect(event){
+    event.target.classList.remove('animate');  
+    event.target.classList.add('animate');
+    setTimeout(function(){
+      event.target.classList.remove('animate');
+    },500);
+  }
 }

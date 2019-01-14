@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-advance-elements',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./advance-elements.component.css']
 })
 export class AdvanceElementsComponent implements OnInit {
+  model: NgbDateStruct;
+  date: {year: number, month: number};
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private calendar: NgbCalendar) {
   }
 
+  selectToday() {
+    this.model = this.calendar.getToday();
+  }
 }

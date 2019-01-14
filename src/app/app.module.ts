@@ -6,6 +6,9 @@ import {RouterModule, Routes} from '@angular/router';
 import {AppRoutingModule} from './components/app.routing';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
+import {CalendarModule, DateAdapter} from 'angular-calendar';
+import {adapterFactory} from 'angular-calendar/date-adapters/date-fns';
+
 import {HomeComponent} from './components/home/home.component';
 import {DataObjects} from './components/ObjectGeneric';
 import {Functions} from './components/Functions';
@@ -143,7 +146,11 @@ import {TableComponent} from './components/table/table.component';
     AppRoutingModule,
     HttpModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    })
   ],
   providers: [DataObjects, LoginGuard, Util, Functions],
   bootstrap: [AppComponent]

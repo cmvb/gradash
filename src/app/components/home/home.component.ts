@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
           console.log(resp, "res");
           this.usuario = resp;
           localStorage.setItem('usuarioSesion', JSON.stringify(this.usuario));
-          debugger;
+          this.util.mostrarPreloader();
           this.router.navigate(['/dashboard']);
         },
         error => {

@@ -23,6 +23,6 @@ export class FooterComponent implements OnInit {
   }
 
   ngOnInit() {
-    $('#preloader').fadeOut()
+    $('#preloader').fadeOut();
   }
 }

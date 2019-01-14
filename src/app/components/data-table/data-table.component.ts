@@ -22,8 +22,12 @@ export class DataTableComponent implements OnInit {
   msg:any;
   const: any;
   usuario: any;
+  usuarioEdit: any;
+  mostrarAlert = 'displayNone';
+  claseBt = 'success';
+  claseBtId = 'one';
 
-  rtaDelete: any;
+  rta: any;
   listaConsulta: any;
   btnEditar = true;
   btnEliminar = true;
@@ -39,6 +43,8 @@ export class DataTableComponent implements OnInit {
 
   constructor(private router: Router, private route: ActivatedRoute, public restService: RestService, datasObject: DataObjects, util: Util) {
     this.usuario = datasObject.getDataUsuario();
+    this.usuarioEdit = datasObject.getDataUsuario();
+    this.rta = datasObject.getDataBase();
     this.msg = datasObject.getProperties(datasObject.getConst().idiomaEn);
     this.const = datasObject.getConst();
     this.util = util;
@@ -66,43 +72,74 @@ export class DataTableComponent implements OnInit {
   }
 
   editar(obj) {
-  	/*try {
-      let url = this.const.urlRestService + 'editUsuario';
+  	this.usuarioEdit = obj;
+  	this.util.showPopUpById("modalForm");
+  }
 
-      this.restService.postREST(url, obj)
+  guardar(){
+  	try {
+      let url = this.const.urlRestService + 'saveUpdateUsuario';
+
+      this.restService.postREST(url, this.usuarioEdit)
         .subscribe(resp => {
           console.log(resp, "res");
-          this.usuario = resp;
-          localStorage.setItem('usuarioSesion', JSON.stringify(this.usuario));
+          localStorage.setItem('usuarioSesion', JSON.stringify(this.usuarioEdit));
+          this.rta = resp;
+          if(this.rta.valor){          	
+          	this.claseBt = 'success';
+          	this.claseBtId = 'one';
+          }
+          else{
+          	this.claseBt = 'warning';
+          	this.claseBtId = 'three';
+          }
+		  this.mostrarAlert = '';
+		  $('#alertUsr').fadeIn();
+		  setTimeout(function(){
+		  	$('#alertUsr').fadeOut();
+	      },50000);
+
+		  this.findAllUsuarios();
+          console.log(this.rta);
         },
         error => {
           console.log(error, "error");
         })
 
-        console.log('Usuario:' + this.usuario);
+        console.log('Usuario:' + this.usuarioEdit);
     } catch (e) {
       console.log(e);
-    }*/
+    }
+  }
+
+  ocultarAlert(){
+  	$('#alertUsr').fadeOut();
   }
 
   eliminar(obj) {
     try {
       let url = this.const.urlRestService + 'deleteUsuario';
-      let id = obj.idUsuario;
 
-      this.restService.deleteREST(url, id)
+      this.restService.postREST(url, obj)
         .subscribe(resp => {
           console.log(resp, "res");
-          debugger;
-          this.rtaDelete = resp;
-          if(this.rtaDelete){
-          	alert("Borrado Exitoso");
+          this.rta = resp;
+          if(this.rta.valor){          	
+          	this.claseBt = 'success';
+          	this.claseBtId = 'one';
           }
           else{
-			alert("Borrado Fallido");
+          	this.claseBt = 'warning';
+          	this.claseBtId = 'three';
           }
+		  this.mostrarAlert = '';
+		  $('#alertUsr').fadeIn();
+		  setTimeout(function(){
+		  	$('#alertUsr').fadeOut();
+	      },50000);
 
-          console.log(this.rtaDelete);
+		  this.findAllUsuarios();
+          console.log(this.rta);
         },
         error => {
           console.log(error, "error");
