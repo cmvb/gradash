@@ -8,6 +8,7 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
 import {CalendarModule, DateAdapter} from 'angular-calendar';
 import {adapterFactory} from 'angular-calendar/date-adapters/date-fns';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {HomeComponent} from './components/home/home.component';
 import {DataObjects} from './components/ObjectGeneric';
@@ -147,6 +148,7 @@ import {TableComponent} from './components/table/table.component';
     HttpModule,
     HttpClientModule,
     NgxPaginationModule,
+    NgbModule.forRoot(),
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory

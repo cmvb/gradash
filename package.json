@@ -30,6 +30,7 @@
     "ngx-pagination": "^3.2.1",
     "rxjs": "^6.3.0",
     "rxjs-compat": "^6.3.3",
+    "vivus": "^0.4.4",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
