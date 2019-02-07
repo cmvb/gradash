@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
   util:any;
   msg:any;
   const: any;
+  error: any;
   
   constructor(private router: Router, private route: ActivatedRoute, public restService: RestService, datasObject: DataObjects, util: Util) {
     this.usuario = datasObject.getDataUsuario();
@@ -52,6 +53,7 @@ export class HomeComponent implements OnInit {
           this.router.navigate(['/dashboard']);
         },
         error => {
+          this.error = error;
           console.log(error, "error");
         })
 

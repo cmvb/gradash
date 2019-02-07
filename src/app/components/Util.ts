@@ -261,6 +261,14 @@ export class Util {
     $('#' + id).toggleClass('modalVisible');
     return true;
   };
+  addClassDisplayNone(id){
+    if(!$('#'+id).hasClass('displayNone')){
+      $('#'+id).addClass('displayNone');
+    }
+  };
+  toggleDisplay(id){
+    $('#'+id).toggleClass('displayNone');
+  };
   tipoDeVariable(obj) {
     return ({}).toString.call(obj).match(/\s([a-z|A-Z]+)/)[1].toLowerCase();
   };

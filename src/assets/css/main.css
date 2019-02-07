@@ -3998,6 +3998,12 @@ ul.profile-contact-menu {
 .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:hover, .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:focus, .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:active, .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:visited{
 	background:#2b2a2a;
 }
+.left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:hover{
+  background: #4c5795 !important;
+  color: #ffffff !important;
+  text-decoration: underline;
+}
+
 .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li .indicator-right-menu{
 	float: right;
 }
@@ -4834,27 +4840,32 @@ a.Primary, a.Information, a.Warning, a.Danger, a.Alert, .modal-footer a{
 
 table { 
   width: 750px; 
-  border-collapse: collapse; 
-  margin:50px auto;
+  border-collapse: collapse;
   }
 
 /* Zebra striping */
 tr:nth-of-type(odd) { 
   background: #eee; 
-  }
+}
+
+tr:hover{
+  background: #a2a9ce !important;
+}
 
 th { 
-  background: #3498db; 
+  background: #4c5795; 
   color: white; 
-  font-weight: bold; 
-  }
+  font-weight: bold;
+  text-align: center !important; 
+}
 
 td, th { 
-  padding: 10px; 
+  padding: 5px; 
   border: 1px solid #ccc; 
   text-align: left; 
-  font-size: 18px;
-  }
+  font-size: 14px;
+  vertical-align: middle !important;
+}
 
 /* 
 Max width before this PARTICULAR table gets nasty
@@ -4911,4 +4922,46 @@ only screen and (max-width: 760px),
 
 .align-items-center{
   text-align: center;
+}
+
+td p{
+  margin: 0 !important;
+}
+
+.ngx-pagination .current{
+  background: #4c5795 !important;
+  border-radius: 50px;
+  box-shadow: 1px 1px 7px black;
+  cursor: pointer;
+}
+
+.ngx-pagination {
+    margin-bottom: 5px;
+}
+
+.ngx-pagination li:hover{
+  border-radius: 50px;
+}
+
+.banner-ca{
+  background: url(../img/copaAmerica/img/banner-ca.jpg) no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+}
+
+.justify-content{
+  justify-content: center;
+}
+
+.banner-menu{
+  background: url(../img/copaAmerica/img/fondoBlanco.jpg) no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+}
+
+.backOscuro{
+  background: black;
+  opacity: 0.2;
 }

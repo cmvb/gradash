@@ -55,6 +55,7 @@ import {ContactsComponent} from './contacts/contacts.component';
 import {ReviewComponent} from './review/review.component';
 import {OrderComponent} from './order/order.component';
 import {CommentComponent} from './comment/comment.component';
+import {CopaAmericaComponent} from './copa-america/copa-america.component';
 
 import {LoginGuard} from './login.guard';
 
@@ -112,7 +113,7 @@ const routes: Routes = [
   {path: 'review', component: ReviewComponent, canActivate: [LoginGuard]},
   {path: 'order', component: OrderComponent, canActivate: [LoginGuard]},
   {path: 'comment', component: CommentComponent, canActivate: [LoginGuard]},  
-
+  {path: 'copa-america', component: CopaAmericaComponent, canActivate: [LoginGuard]},  
 
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: '**', redirectTo: 'home', pathMatch: 'full'}

@@ -75,6 +75,7 @@ import {MetrizaIconsComponent} from './components/metriza-icons/metriza-icons.co
 import {OpenIconicIconsComponent} from './components/open-iconic-icons/open-iconic-icons.component';
 import {ThemifyIconsComponent} from './components/themify-icons/themify-icons.component';
 import {TableComponent} from './components/table/table.component';
+import { CopaAmericaComponent } from './components/copa-america/copa-america.component';
 
 @NgModule({
   declarations: [
@@ -138,7 +139,8 @@ import {TableComponent} from './components/table/table.component';
     MetrizaIconsComponent,
     OpenIconicIconsComponent,
     ThemifyIconsComponent,
-    TableComponent
+    TableComponent,
+    CopaAmericaComponent
   ],
   imports: [
     BrowserModule,

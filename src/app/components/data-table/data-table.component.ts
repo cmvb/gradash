@@ -48,6 +48,7 @@ export class DataTableComponent implements OnInit {
     this.msg = datasObject.getProperties(datasObject.getConst().idiomaEn);
     this.const = datasObject.getConst();
     this.util = util;
+    this.usuario = localStorage.getItem('usuarioSesion') === null ? null : JSON.parse(localStorage.getItem('usuarioSesion').toString());
   }
 
   ngOnInit() {
@@ -83,7 +84,12 @@ export class DataTableComponent implements OnInit {
       this.restService.postREST(url, this.usuarioEdit)
         .subscribe(resp => {
           console.log(resp, "res");
-          localStorage.setItem('usuarioSesion', JSON.stringify(this.usuarioEdit));
+
+          if(this.usuario.usuario === this.usuarioEdit.usuario){
+          	this.usuarioEdit.tbSesion = this.usuario.tbSesion;
+		    localStorage.setItem('usuarioSesion', JSON.stringify(this.usuarioEdit));
+		    this.usuario = this.usuarioEdit;
+		  }
           this.rta = resp;
           if(this.rta.valor){          	
           	this.claseBt = 'success';

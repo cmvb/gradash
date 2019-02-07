@@ -65,7 +65,7 @@
                     <div role="menu" class="dropdown-menu left-menu-dropdown form-left-menu-std animated flipInX">
                         <a (click)="util.mostrarPreloader()" routerLink="/basic-elements" class="dropdown-item">Elementos Básicos</a>
                         <a (click)="util.mostrarPreloader()" routerLink="/advance-elements" class="dropdown-item">Elementos Avanzados</a>
-                        <a (click)="util.mostrarPreloader()" routerLink="/password-meter" class="dropdown-item">Medidor de Contraseñas</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/password-meter" class="dropdown-item">Medidor Seguridad</a>
                         <a (click)="util.mostrarPreloader()" routerLink="/multi-upload" class="dropdown-item">Multi Upload</a>
                         <a (click)="util.mostrarPreloader()" routerLink="/text-editor" class="dropdown-item">Editor de Texto</a>
                         <a (click)="util.mostrarPreloader()" routerLink="/dual-list-box" class="dropdown-item">Lista Dual</a>
@@ -100,6 +100,12 @@
                         <a (click)="util.mostrarPreloader()" routerLink="/review" class="dropdown-item">Review</a>
                         <a (click)="util.mostrarPreloader()" routerLink="/order" class="dropdown-item">Order</a>
                         <a (click)="util.mostrarPreloader()" routerLink="/comment" class="dropdown-item">Comment</a>
+                        <a (click)="util.mostrarPreloader()" routerLink="/copa-america" class="dropdown-item">Copa América 2019</a>
+                    </div>
+                </li>
+                <li (click)="util.abrirNav($event)" class="nav-item"><a  data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle "><i class="fa big-icon fa-world"></i> <span class="mini-dn">Apps/WebSites</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-right"></i></span></a>
+                    <div role="menu" class="dropdown-menu left-menu-dropdown pages-left-menu-std animated flipInX">
+                        <a (click)="util.mostrarPreloader()" routerLink="/copa-america" class="dropdown-item">Copa América 2019</a>
                     </div>
                 </li>
             </ul>
